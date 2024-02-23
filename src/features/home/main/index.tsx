@@ -11,7 +11,7 @@ const Main = ({
       </div>
       <div className="flex-1 divide-y divide-slate-700">
         <>{children}</>
-        <div className="h-[100px]"></div>
+        <div className="hidden lg:flex h-[100px]"></div>
       </div>
     </div>
   );
