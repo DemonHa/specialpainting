@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import AnimatedSlider from "./animated-slider";
 
@@ -37,20 +37,22 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setPage((current) => (current === template.length - 1 ? 0 : current + 1));
-    }, 5000); 
+    }, 5000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [template.length]);
 
   const temp = template[page];
 
   return (
-    <div className="flex flex-col h-[80vh] p-7">
-      <div className="flex min-h-[30vh]">
+    <div className="flex flex-col min-h-[80vh] p-7">
+      <div className="flex min-h-[25vh]">
         <div className="flex flex-1 items-center bg-red-600">
           <div className="px-4 text-5xl">{temp.title}</div>
         </div>
-        <div className="flex flex-1 items-end justify-end py-7"><AnimatedSlider activePage={page} /></div>
+        <div className="flex flex-1 items-end justify-end py-7">
+          <AnimatedSlider activePage={page} />
+        </div>
       </div>
       <div className="flex flex-1 ">
         <div className="flex flex-1">
@@ -63,7 +65,9 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        <div className="flex-1"><img src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg" /></div>
+        <div className="flex-1">
+          <img src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg" />
+        </div>
       </div>
     </div>
   );
