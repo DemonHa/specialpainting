@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence  } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import NavBarLink from "./nav-bar-link";
+import AnimatedMenuButton from "./animated-menu-button";
 
 const menuVariants = {
   closed: {
@@ -20,6 +21,9 @@ const menuVariants = {
     }
   }
 };
+
+const menuTitleStyles = "h-[15vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700";
+const menuLinkStyles = "h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer"
 
 const Navbar = () => {
 
@@ -45,26 +49,7 @@ const Navbar = () => {
           <div className="p-5 text-xl">VENTION</div>
         </div>
         <div className="flex xl:hidden border-l border-slate-700 min-w-[50px]:">
-          <button
-            onClick={() => { setOpen((prev) => !prev) }}
-            className="min-w-[60px] flex justify-center align-middle items-center">
-            <div className="flex flex-col space-y-2.5 items-center justify-center p-3 h-[60px] max-w-[40px] ">
-              <motion.div
-                className=" bg-white w-[30px]"
-                initial={{ transform: "rotate(0deg)" }}
-                animate={{ transform: open ? "rotate(45deg)" : "rotate(0deg)", }}
-                transition={{ duration: 0.2 }}
-                style={{ originX: 0.24, originY: 0.5, height: "2px" }}
-              />
-              <motion.div
-                className=" bg-white w-[30px]"
-                initial={{ transform: "rotate(0deg)" }}
-                animate={{ transform: open ? "rotate(-45deg)" : "rotate(0deg)" }}
-                transition={{ duration: 0.2 }}
-                style={{ originX: 0.24, originY: 0.5, height: "2px" }}
-              />
-            </div>
-          </button>
+          <AnimatedMenuButton setOpen={setOpen} open={open} />
         </div>
         {/* menu for big screens */}
         <div className="hidden xl:flex justify-between text-xl">
@@ -77,24 +62,24 @@ const Navbar = () => {
       </div>
       {/* menu for small screens */}
       <AnimatePresence>
-      {open &&  <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            className="z-10 absolute w-full overflow-hidden flex"
-            style={{ top: '40px' }} // Adjust accordingly
-          >
-        <div className="w-[30vw] h-[94dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
-        <div className=" bg-black h-[95dvh] w-[70vw]">
-          <div className="h-[15vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700">What we do</div>
-          <div className="h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer">Interior</div>
-          <div className="h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer">Exterior</div>
-          <div className="h-[15vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700">About Us</div>
-          <div className="h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer">Company</div>
-          <div className="h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer">Reviews</div>
-        </div>
-      </motion.div>}
+        {open && <motion.div
+          initial="closed"
+          animate="open"
+          exit="closed"
+          variants={menuVariants}
+          className="z-10 absolute w-full overflow-hidden flex"
+          style={{ top: '40px' }} // Adjust accordingly
+        >
+          <div className="w-[30vw] h-[94dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
+          <div className=" bg-black h-[95dvh] w-[70vw]">
+            <div className={menuTitleStyles}>What we do</div>
+            <div className={menuLinkStyles}>Interior</div>
+            <div className={menuLinkStyles}>Exterior</div>
+            <div className={menuTitleStyles}>About Us</div>
+            <div className={menuLinkStyles}>Company</div>
+            <div className={menuLinkStyles}>Reviews</div>
+          </div>
+        </motion.div>}
       </AnimatePresence>
     </div>
   );
