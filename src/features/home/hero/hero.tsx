@@ -45,10 +45,10 @@ const Hero = () => {
   const temp = template[page];
 
   return (
-    <div className="flex flex-col min-h-[80vh] p-7">
-      <div className="flex min-h-[25vh]">
-        <div className="flex flex-1 items-center bg-red-600">
-          <div className="px-4 text-5xl">{temp.title}</div>
+    <div className="flex flex-col min-h-[80vh] p-7 pb-[5rem]">
+      <div className="flex min-h-[35vh]">
+        <div className="flex flex-1 items-center py-15 bg-red-600">
+          <div className="px-4 text-7xl">{temp.title}</div>
         </div>
         <div className="flex flex-1 items-end justify-end py-7">
           <AnimatedSlider activePage={page} />
@@ -60,13 +60,13 @@ const Hero = () => {
           <div className="flex-1 flex flex-col justify-end pr-10">
             <div className="text-lg">{temp.description}</div>
             <button className="w-full bg-red-600 mt-8 px-5 py-3 flex justify-between items-center">
-              <div>{temp.button}</div>
+              <div className="text-3xl m-2">{temp.button}</div>
               <MdArrowOutward size={30} />
             </button>
           </div>
         </div>
         <div className="flex-1">
-          <img src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg" />
+          <img src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg" style={{clipPath: "polygon(50% 0%, 100% 0, 100% 62%, 67% 62%, 34% 100%, 16% 100%, 0 100%, 0% 43%, 0 0)"}} />
         </div>
       </div>
     </div>

@@ -14,8 +14,16 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        'custom-gray': '#434345'
-      }
+        'custom-gray': '#434345',
+        'glass-bg': 'rgba(255, 255, 255, 0.35)',
+        'glass-border': 'rgba(255, 255, 255, 0.18)'
+      },
+      boxShadow: {
+        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+      },
+      backdropBlur: {
+        glass: '20px',
+      },
     },
   },
   plugins: [],
