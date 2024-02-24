@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from 'framer-motion';
 import NavBarLink from "./nav-bar-link";
 import AnimatedMenuButton from "./animated-menu-button";
@@ -46,18 +47,18 @@ const Navbar = () => {
     <div>
       <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 max-h-[40px] lg:max-h-none xl:max-h-none z-20">
         <div className="flex-1 flex items-center">
-          <div className="p-5 text-xl">VENTION</div>
+          <Link href="/"><div className="p-5 text-xl">VENTION</div></Link>
         </div>
         <div className="flex xl:hidden border-l border-slate-700 min-w-[50px]:">
           <AnimatedMenuButton setOpen={setOpen} open={open} />
         </div>
         {/* menu for big screens */}
         <div className="hidden xl:flex justify-between text-xl">
-          <NavBarLink text="What we do" />
-          <NavBarLink text="Portfolio" />
-          <NavBarLink text="Insights" />
-          <NavBarLink text="About us" />
-          <NavBarLink text="Contact us" filled />
+          <NavBarLink text="What we do" link="what-we-do" />
+          <NavBarLink text="Portfolio" link="portfolio" />
+          <NavBarLink text="Insights" link="insights" />
+          <NavBarLink text="About us" link="about-us" />
+          <NavBarLink text="Contact us" filled link="contact" />
         </div>
       </div>
       {/* menu for small screens */}
