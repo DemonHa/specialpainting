@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 max-h-[40px] lg:max-h-none xl:max-h-none z-20">
+      <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 z-20 h-[7dvh] md:h-[7dvh] sm:h-[7dvh] lg:h-[7dvh] xl:h-[12dvh]">
         <div className="flex-1 flex items-center">
           <Link href="/"><div className="p-5 text-xl">VENTION</div></Link>
         </div>
@@ -70,11 +70,11 @@ const Navbar = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="z-10 absolute w-full overflow-hidden flex"
-            style={{ top: '40px' }} // Adjust accordingly
+            className="z-10 absolute w-full overflow-hidden flex xl:hidden"
+            style={{ top: '7dvh' }} // Adjust accordingly
           >
-            <div className="w-[30vw] h-[94dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
-            <div className="bg-black flex flex-col justify-between h-[94dvh] w-[70vw]">
+            <div className="w-[30vw] h-[93dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
+            <div className="bg-black flex flex-col justify-between h-[93dvh] w-[70vw]">
               <div>
                 {/* Content goes here */}
                 <div className={menuTitleStyles}>What we do</div>
