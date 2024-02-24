@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from 'framer-motion';
 import NavBarLink from "./nav-bar-link";
 import AnimatedMenuButton from "./animated-menu-button";
+import { MdArrowOutward } from "react-icons/md";
 
 const menuVariants = {
   closed: {
@@ -23,8 +24,8 @@ const menuVariants = {
   }
 };
 
-const menuTitleStyles = "h-[15vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700";
-const menuLinkStyles = "h-[10vh] flex justify-start items-end p-3 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer"
+const menuTitleStyles = "h-[15vh] flex justify-start items-end py-3 px-7 text-2xl border-b border-slate-700";
+const menuLinkStyles = "h-[10vh] flex justify-start items-end py-3 px-7 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer"
 
 const Navbar = () => {
 
@@ -63,25 +64,36 @@ const Navbar = () => {
       </div>
       {/* menu for small screens */}
       <AnimatePresence>
-        {open && <motion.div
-          initial="closed"
-          animate="open"
-          exit="closed"
-          variants={menuVariants}
-          className="z-10 absolute w-full overflow-hidden flex"
-          style={{ top: '40px' }} // Adjust accordingly
-        >
-          <div className="w-[30vw] h-[94dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
-          <div className=" bg-black h-[95dvh] w-[70vw]">
-            <div className={menuTitleStyles}>What we do</div>
-            <div className={menuLinkStyles}>Interior</div>
-            <div className={menuLinkStyles}>Exterior</div>
-            <div className={menuTitleStyles}>About Us</div>
-            <div className={menuLinkStyles}>Company</div>
-            <div className={menuLinkStyles}>Reviews</div>
-          </div>
-        </motion.div>}
+        {open && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="z-10 absolute w-full overflow-hidden flex"
+            style={{ top: '40px' }} // Adjust accordingly
+          >
+            <div className="w-[30vw] h-[94dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
+            <div className="bg-black flex flex-col justify-between h-[94dvh] w-[70vw]">
+              <div>
+                {/* Content goes here */}
+                <div className={menuTitleStyles}>What we do</div>
+                <Link onClick={() => {setOpen((prev) => !prev)}} href="portfolio"><div className={menuLinkStyles}>Portfolio</div></Link>
+                <Link onClick={() => {setOpen((prev) => !prev)}} href="what-we-do"><div className={menuLinkStyles}>Our Work</div></Link>
+                <div className={menuTitleStyles}>About Us</div>
+                <Link onClick={() => {setOpen((prev) => !prev)}} href="about-us"><div className={menuLinkStyles}>Reviews</div></Link>
+                <Link onClick={() => {setOpen((prev) => !prev)}} href="insights"><div className={menuLinkStyles}>Insights</div></Link>
+              </div>
+              {/* Fixed Button at the Bottom */}
+              <Link onClick={() => {setOpen((prev) => !prev)}} href="contact" className="px-7 py-3 bg-orange-600 mt-auto w-full flex justify-between items-center">
+                <div className="text-3xl m-2">Contact Us</div>
+                <MdArrowOutward size={40} />
+              </Link>
+            </div>
+          </motion.div>
+        )}
       </AnimatePresence>
+
     </div>
   );
 };
