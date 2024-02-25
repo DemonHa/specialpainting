@@ -40,36 +40,54 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [template.length]);
+  }, []);
 
   const temp = template[page];
 
   return (
-    <div className="flex flex-col min-h-[80vh] p-7 pb-[5rem]">
-      <div className="flex min-h-[35vh]">
-        <div className="flex flex-1 items-center py-15 bg-red-600">
-          <div className="px-4 text-7xl">{temp.title}</div>
+    <>
+      <div className="grid grid-cols-[3fr_13fr] md:grid-cols-[4fr_14fr] lg:grid-cols-2 grid-rows-[auto_max-content] gap-0 p-5 md:pt-14 lg:pt-5">
+        <div className="flex flex-1 min-h-[200px] lg:min-h-[calc(143px+136*((100vw-1080px)/840))] items-center bg-red-600">
+          <div className="hidden lg:flex px-4 text-6xl">{temp.title}</div>
         </div>
-        <div className="flex flex-1 items-end justify-end py-7">
-          <AnimatedSlider activePage={page} />
-        </div>
-      </div>
-      <div className="flex flex-1 ">
-        <div className="flex flex-1">
-          <div className="flex-1"></div>
-          <div className="flex-1 flex flex-col justify-end pr-10">
-            <div className="text-lg">{temp.description}</div>
-            <button className="w-full bg-red-600 mt-8 px-5 py-3 flex justify-between items-center">
-              <div className="text-3xl m-2">{temp.button}</div>
-              <MdArrowOutward size={30} />
-            </button>
+        <div className="flex flex-1 lg:items-end justify-end lg:py-7">
+          <div className="hidden lg:flex">
+            <AnimatedSlider activePage={page} />
+          </div>
+          <div className="flex flex-col min-h-[540px] md:min-h-[729px] pt-20 pb-8 pl-10 pr-5 md:pt-72 md:pl-32 md:pb-24 lg:hidden gap-4">
+            <div className="text-4xl sm:text-5xl">{temp.title}</div>
+            <div>{temp.description}</div>
           </div>
         </div>
-        <div className="flex-1">
-          <img src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg" style={{clipPath: "polygon(50% 0%, 100% 0, 100% 62%, 67% 62%, 34% 100%, 16% 100%, 0 100%, 0% 43%, 0 0)"}} />
+        <div>
+          <div className="hidden lg:flex h-[100%]">
+            <div className="flex-1"></div>
+            <div className="flex-1 flex flex-col justify-end pr-10">
+              <div className="text-lg">{temp.description}</div>
+              <button className="w-full bg-red-600 mt-8 px-6 py-4 flex justify-between items-center">
+                <div className="text-2xl">{temp.button}</div>
+                <MdArrowOutward size={30} />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="flex-1">
+            <img
+              src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg"
+              style={{
+                clipPath:
+                  "polygon(50% 0%, 100% 0, 100% 62%, 67% 62%, 34% 100%, 16% 100%, 0 100%, 0% 43%, 0 0)",
+              }}
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <button className="lg:hidden w-full bg-red-600 px-3 py-6 flex justify-between items-center">
+        <div className="text-2xl">{temp.button}</div>
+        <MdArrowOutward size={30} />
+      </button>
+    </>
   );
 };
 
