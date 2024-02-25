@@ -2,13 +2,14 @@ import { motion } from "framer-motion";
 
 type props = {
   activePage: number;
+  small?: boolean;
 };
 
-const AnimatedSlider = ({ activePage }: props) => {
+const AnimatedSlider = ({ activePage, small = false }: props) => {
   const items = ["01", "02", "03", "04"];
 
   return (
-    <div className="flex space-x-10 px-10 py-2">
+    <div className="flex space-x-2 lg:space-x-10">
       {items.map((item, index) => (
         <motion.div
           key={item}
@@ -16,12 +17,15 @@ const AnimatedSlider = ({ activePage }: props) => {
           animate={{
             borderColor: activePage === index ? "#dc2626" : "#434345",
             color: activePage === index ? "#dc2626" : "#434345",
-            width: activePage === index ? "10rem" : "2rem",
+            width:
+              activePage === index ? (small ? "2.5rem  " : "10rem") : "2rem",
           }}
           transition={{ duration: 0.5 }}
           className="border-t-2 pt-2"
         >
-          <div className={`text-xl font-semibold`}>{item}</div>
+          <div className={`text-xs md:text-sm lg:text-xl font-semibold`}>
+            {item}
+          </div>
         </motion.div>
       ))}
     </div>
