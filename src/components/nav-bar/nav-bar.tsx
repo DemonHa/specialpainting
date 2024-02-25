@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 z-20 h-[7dvh] md:h-[7dvh] sm:h-[7dvh] lg:h-[7dvh] xl:h-[12dvh]">
+      <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 z-20 h-[7dvh] md:h-[7dvh] sm:h-[7dvh] lg:h-[7dvh] xl:h-[8dvh]">
         <div className="flex-1 flex items-center">
           <Link href="/"><div className="p-5 text-xl">VENTION</div></Link>
         </div>

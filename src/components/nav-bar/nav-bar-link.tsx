@@ -1,14 +1,28 @@
 import Link from "next/link";
 
 type props = {
-    text: string;
-    filled?: boolean;
-    link: string;
-}
+  text: string;
+  filled?: boolean;
+  link: string;
+};
 
-const filledClasess = 'h-[12dvh] w-[13ch] py-6 px-2 ml-8 bg-red-600 text-black cursor-pointer hover:bg-red-400 flex items-center justify-center'
-const normalClasess = 'h-[12dvh] w-[12ch] py-6 px-2 mx-8 cursor-pointer hover:text-red-300 flex items-center justify-center'
+const filledClasses = 'h-[8dvh] w-[13ch] py-6 px-2 ml-8 bg-red-600 text-[18px] text-black hover:bg-red-400 flex items-center justify-center';
+const normalClasses = 'h-[8dvh] w-[12ch] py-6 px-2 mx-12 text-[18px] hover:text-red-300 flex items-center justify-start';
 
-const NavBarLink = ({ text, filled = false, link }: props) => <Link href={link}><div className={filled ? filledClasess : normalClasess}>{text}</div></Link>
+const NavBarLink = ({ text, filled = false, link }: props) => {
+  if (filled) {
+    return (
+      <Link href={link}>
+        <div className={filledClasses}>{text}</div>
+      </Link>
+    );
+  } else {
+    return (
+      <div className={normalClasses}>
+        <Link href={link}>{text}</Link>
+      </div>
+    );
+  }
+};
 
-export default NavBarLink
+export default NavBarLink;
