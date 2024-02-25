@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import AnimatedSlider from "./animated-slider";
+import TextAnimationWrapper from "./text-animation";
 
 const template = [
   {
@@ -44,7 +45,7 @@ const Hero = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [page]);
 
   const temp = template[page];
 
@@ -54,28 +55,26 @@ const Hero = () => {
         <div
           className={`flex flex-1 min-h-[200px] lg:min-h-[calc(143px+136*((100vw-1080px)/840))] items-center ${temp.color}`}
         >
-          <div className="hidden lg:flex px-4 text-5xl xl:text-6xl">
-            {temp.title}
-          </div>
+          <TextAnimationWrapper text={temp.title} className="hidden lg:flex px-4 text-5xl xl:text-6xl" />
         </div>
         <div className="flex flex-1 lg:items-end justify-end lg:py-7">
           <div className="hidden lg:flex">
-            <AnimatedSlider activePage={page} />
+            <AnimatedSlider activePage={page} setActivePage={setPage} />
           </div>
           <div className="flex flex-col min-h-[540px] md:min-h-[729px] pt-20 pb-8 pl-10 pr-5 md:pt-72 md:pl-32 md:pb-24 lg:hidden gap-4">
-            <div className="text-4xl sm:text-5xl">{temp.title}</div>
-            <div>{temp.description}</div>
+            <TextAnimationWrapper className="text-4xl sm:text-5xl" text={temp.title} />
+            <TextAnimationWrapper text={temp.description} />
           </div>
         </div>
         <div>
           <div className="hidden lg:flex h-[100%]">
             <div className="flex-1"></div>
             <div className="flex-1 min-w-[350px] flex flex-col justify-end pr-10">
-              <div className="text-sm xl:text-lg">{temp.description}</div>
+              <TextAnimationWrapper className="text-sm xl:text-lg" text={temp.description}/>
               <button
                 className={`w-full ${temp.color} mt-4 xl:mt-8 px-3 xl:px-6 py-2 xl:py-4 flex justify-between items-center`}
               >
-                <div className="text-sm xl:text-2xl">{temp.button}</div>
+                <TextAnimationWrapper className="text-sm xl:text-2xl" text={temp.button}/>
                 <MdArrowOutward size={30} />
               </button>
             </div>
@@ -92,14 +91,14 @@ const Hero = () => {
             />
           </div>
           <div className="absolute bottom-0 right-0 lg:hidden">
-            <AnimatedSlider small activePage={page} />
+            <AnimatedSlider small activePage={page} setActivePage={setPage} />
           </div>
         </div>
       </div>
       <button
         className={`lg:hidden w-full ${temp.color} px-3 py-6 flex justify-between items-center`}
       >
-        <div className="text-2xl">{temp.button}</div>
+        <TextAnimationWrapper className="text-2xl" text={temp.button} />
         <MdArrowOutward size={30} />
       </button>
     </>
