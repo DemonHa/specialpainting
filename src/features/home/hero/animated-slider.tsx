@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 type props = {
   activePage: number;
   small?: boolean;
+  setActivePage: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const AnimatedSlider = ({ activePage, small = false }: props) => {
+const AnimatedSlider = ({ activePage, small = false, setActivePage }: props) => {
   const items = ["01", "02", "03", "04"];
 
   return (
@@ -13,6 +14,7 @@ const AnimatedSlider = ({ activePage, small = false }: props) => {
       {items.map((item, index) => (
         <motion.div
           key={item}
+          onClick={() => {setActivePage(index)}}
           initial={{ borderColor: "#434345", color: "#434345" }}
           animate={{
             borderColor: activePage === index ? "#dc2626" : "#434345",
@@ -21,7 +23,7 @@ const AnimatedSlider = ({ activePage, small = false }: props) => {
               activePage === index ? (small ? "2.5rem  " : "10rem") : "2rem",
           }}
           transition={{ duration: 0.5 }}
-          className="border-t-2 pt-2"
+          className="border-t-2 pt-2 cursor-pointer"
         >
           <div className={`text-xs md:text-sm lg:text-xl font-semibold`}>
             {item}
