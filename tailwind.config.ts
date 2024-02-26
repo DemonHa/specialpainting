@@ -8,21 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        'custom-gray': '#434345',
-        'glass-bg': 'rgba(255, 255, 255, 0.35)',
-        'glass-border': 'rgba(255, 255, 255, 0.18)'
+        "glass-bg": "rgba(255, 255, 255, 0.35)",
+        "glass-border": "rgba(255, 255, 255, 0.18)",
+        "background-dark": "#29292b",
+        "background-white": "#ebebed",
       },
       boxShadow: {
-        glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
       },
       backdropBlur: {
-        glass: '20px',
+        glass: "20px",
       },
     },
   },
