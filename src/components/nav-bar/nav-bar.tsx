@@ -25,9 +25,9 @@ const menuVariants = {
 };
 
 const menuTitleStyles =
-  "h-[15vh] flex justify-start items-end py-3 px-7 text-2xl border-b border-slate-700";
+  "h-[15vh] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
 const menuLinkStyles =
-  "h-[10vh] flex justify-start items-end py-3 px-7 text-2xl border-b border-slate-700 text-orange-300 cursor-pointer";
+  "h-[10vh] flex justify-start items-end py-3 px-7 text-xl font-semibold border-b border-gray-300 dark:border-slate-700 text-black dark:text-orange-300 cursor-pointer";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -47,13 +47,13 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between w-full border-b border-slate-700 divide-x divide-slate-700 z-20 h-[7dvh] md:h-[7dvh] sm:h-[7dvh] lg:h-[7dvh] xl:h-[8dvh]">
+      <div className="flex justify-between w-full border-b border-gray-300 dark:border-slate-700 divide-x divide-gray-300 dark:divide-slate-700 z-20 h-[7dvh] md:h-[7dvh] sm:h-[7dvh] lg:h-[7dvh] xl:h-[8dvh]">
         <div className="flex-1 flex items-center">
           <Link href="/">
             <div className="p-5 text-xl">VENTION</div>
           </Link>
         </div>
-        <div className="flex xl:hidden border-l border-slate-700 min-w-[50px]:">
+        <div className="flex xl:hidden border-l border-gray-300 dark:border-slate-700 min-w-[50px]:">
           <AnimatedMenuButton setOpen={setOpen} open={open} />
         </div>
         {/* menu for big screens */}
@@ -77,7 +77,7 @@ const Navbar = () => {
             style={{ top: "7dvh" }} // Adjust accordingly
           >
             <div className="w-[30vw] h-[93dvh] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border"></div>
-            <div className="bg-black flex flex-col justify-between h-[93dvh] w-[70vw]">
+            <div className="z-10 bg-background-white dark:bg-background-dark flex flex-col justify-between h-[93dvh] w-[70vw]">
               <div>
                 {/* Content goes here */}
                 <div className={menuTitleStyles}>What we do</div>
@@ -121,10 +121,10 @@ const Navbar = () => {
                   setOpen((prev) => !prev);
                 }}
                 href="contact"
-                className="px-7 py-3 bg-orange-500 mt-auto w-full flex justify-between items-center"
+                className="px-6 py-3 bg-orange-500 mt-auto w-full flex justify-between items-center"
               >
-                <div className="text-3xl m-2">Contact Us</div>
-                <MdArrowOutward size={40} />
+                <div className="text-xl font-semibold m-2">Contact Us</div>
+                <MdArrowOutward size={34} />
               </Link>
             </div>
           </motion.div>
