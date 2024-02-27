@@ -7,9 +7,9 @@ const Statistic = ({
   description: string;
 } & React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={className}>
-      <div className="text-red-500 text-6xl">{title}</div>
-      <div>{description}</div>
+    <div className={`${className} space-y-3`}>
+      <div className="text-red-500 text-6xl text-center">{title}</div>
+      <div className="text-center">{description}</div>
     </div>
   );
 };
@@ -17,7 +17,7 @@ const Statistic = ({
 const Statistics = () => {
   return (
     <div className="!border-t-0 lg:!border-t grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 divide-x divide-y lg:divide-x-0 lg:divide-y-0 divide-gray-300 dark:divide-slate-700">
-      <div className="text-red-500 text-lg md:col-span-2 px-5 py-4">
+      <div className="text-red-500 text-lg md:col-span-2 px-5 py-4 ml-2">
         Key stats
       </div>
       <Statistic
