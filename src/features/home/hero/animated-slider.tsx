@@ -4,9 +4,15 @@ type props = {
   activePage: number;
   small?: boolean;
   setActivePage: React.Dispatch<React.SetStateAction<number>>;
+  color: string;
 };
 
-const AnimatedSlider = ({ activePage, small = false, setActivePage }: props) => {
+const AnimatedSlider = ({
+  activePage,
+  color,
+  small = false,
+  setActivePage,
+}: props) => {
   const items = ["01", "02", "03", "04"];
 
   return (
@@ -14,11 +20,13 @@ const AnimatedSlider = ({ activePage, small = false, setActivePage }: props) => 
       {items.map((item, index) => (
         <motion.div
           key={item}
-          onClick={() => {setActivePage(index)}}
+          onClick={() => {
+            setActivePage(index);
+          }}
           initial={{ borderColor: "#434345", color: "#434345" }}
           animate={{
-            borderColor: activePage === index ? "#dc2626" : "#434345",
-            color: activePage === index ? "#dc2626" : "#434345",
+            borderColor: activePage === index ? color : "#434345",
+            color: activePage === index ? color : "#434345",
             width:
               activePage === index ? (small ? "2.5rem  " : "10rem") : "2rem",
           }}
