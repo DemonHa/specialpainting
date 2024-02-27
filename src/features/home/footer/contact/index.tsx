@@ -1,5 +1,11 @@
 import React from 'react'
 
+const prefilledStyles = {
+    WebkitTextFillColor: 'white',
+    transition: 'background-color 5000s ease-in-out 0s',
+}
+
+
 const Contact = () => {
     return (
         <div className='flex divide-x divide-slate-700'>
@@ -7,12 +13,12 @@ const Contact = () => {
                 <div className='ml-8 text-5xl font-semibold mb-12'>Contact us</div>
                 <div>
                     <div className='grid grid-cols-2'>
-                        <input className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8' placeholder='Full name' />
-                        <input className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8' placeholder='Email' />
-                        <input className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8' placeholder='Phone (optional)' />
+                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Full name' />
+                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Email' />
+                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Phone (optional)' />
                     </div>
                     <div className='flex flex-col justify-end items-end'>
-                    <textarea className='w-full bg-inherit border border-slate-700 h-48 resize-none focus:outline-none px-8 py-5' placeholder='How can we help you?' />
+                        <textarea style={prefilledStyles} className='w-full bg-inherit border border-slate-700 h-48 resize-none focus:outline-none px-8 py-5' placeholder='How can we help you?' />
                         <div className='h-[4rem] w-[10rem] bg-indigo-600' />
                     </div>
                 </div>
