@@ -1,7 +1,7 @@
 import React from 'react'
 
 const prefilledStyles = {
-    WebkitTextFillColor: 'white',
+    WebkitTextFillColor: 'rgba(255,255,255,0.6)',
     transition: 'background-color 5000s ease-in-out 0s',
 }
 
@@ -13,7 +13,7 @@ const Contact = () => {
                 <div className='ml-8 text-5xl font-semibold mb-12'>Contact us</div>
                 <div>
                     <div className='grid grid-cols-2'>
-                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Full name' />
+                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white ' placeholder='Full name' />
                         <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Email' />
                         <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none px-8 text-white' placeholder='Phone (optional)' />
                     </div>
