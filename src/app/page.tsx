@@ -5,7 +5,6 @@ import Statistics from "@/features/home/main/statistics";
 import Testimonials from "@/features/home/main/testimonials";
 import Footer from "@/features/home/footer";
 import Language from "@/features/home/footer/language";
-
 import Achivements from "@/features/home/main/achivements";
 
 export default function Home() {
