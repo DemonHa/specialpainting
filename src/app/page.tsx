@@ -17,9 +17,9 @@ export default function Home() {
         <Achivements />
         <Testimonials />
       </Main>
-    <Footer>
-      <Language />
-    </Footer>
+      <Footer>
+        <Language />
+      </Footer>
     </>
   );
 }

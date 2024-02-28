@@ -47,7 +47,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setPage((current) =>
-        current === templates.length - 1 ? 0 : current + 1
+        current === templates.length - 1 ? 0 : current + 1,
       );
     }, 5000);
 
