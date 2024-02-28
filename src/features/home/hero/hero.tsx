@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -110,6 +111,7 @@ const Hero = () => {
                 clipPath:
                   "polygon(50% 0%, 100% 0, 100% 62%, 67% 62%, 34% 100%, 16% 100%, 0 100%, 0% 43%, 0 0)",
               }}
+              alt=""
             />
           </div>
           <div className="absolute bottom-0 right-0 lg:hidden">

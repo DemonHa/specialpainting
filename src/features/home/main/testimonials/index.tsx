@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState } from "react";
@@ -61,6 +62,7 @@ const Testimonials = () => {
             <img
               className="w-[100%] rounded-lg"
               src="https://ventionteams.com/_next/image?url=https%3A%2F%2Fventionteams.com%2Fmedia%2Foriginal_images%2FRavi_Srikantan.png&w=768&q=75"
+              alt=""
             />
           </div>
           <div>
