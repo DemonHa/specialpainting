@@ -4,7 +4,7 @@ const Main = ({
   children: React.ReactNode | React.ReactNode[] | undefined;
 }) => {
   return (
-    <div className="flex divide-x divide-gray-300 dark:divide-slate-700 border-y border-gray-300 dark:border-slate-700">
+    <div className="flex lg:divide-x divide-gray-300 dark:divide-slate-700 border-y border-gray-300 dark:border-slate-700">
       <div className="hidden lg:flex items-end">
         <div className="flex-1"></div>
         <div className="w-[100px] h-[100px] bg-fuchsia-400"></div>
