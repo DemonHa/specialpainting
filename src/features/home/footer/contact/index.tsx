@@ -15,13 +15,13 @@ const Contact = () => {
             <div className='flex-col flex-1 flex justify-end  h-[40rem]'>
                 <div className='ml-8 text-5xl font-semibold mb-12 max-md:ml-5 max-md:mb-10'>Contact us</div>
                 <div>
-                    <div className='grid grid-cols-2 max-md:grid-cols-1'>
-                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Full name' />
-                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Email' />
-                        <input style={prefilledStyles} className='bg-inherit border border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Phone (optional)' />
+                    <div className='grid grid-cols-2 max-md:grid-cols-1 border-y border-slate-700'>
+                        <input style={prefilledStyles} className='bg-inherit border-b border-r max-md:border-r-0 border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Full name' />
+                        <input style={prefilledStyles} className='bg-inherit border-b border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Email' />
+                        <input style={prefilledStyles} className='bg-inherit border-r max-md:border-r-0 border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 text-white' placeholder='Phone (optional)' />
                     </div>
                     <div className='flex flex-col justify-end'>
-                        <textarea style={prefilledStyles} className='w-full bg-inherit border border-slate-700 h-48 resize-none focus:outline-none py-5 px-5 min-md:px-8 max-lg:h-20' placeholder='How can we help you?' />
+                        <textarea style={prefilledStyles} className='w-full bg-inherit border-b border-slate-700 h-48 resize-none focus:outline-none py-5 px-5 min-md:px-8 max-lg:h-20' placeholder='How can we help you?' />
                         <div className='flex justify-between w-full items-center py-4 lg:py-0'>
                             <div className='min-md:ml-8 text-lg font-semibold ml-5'>Fill the fields above and click send, we will respond as soon as possible via emial or phone call.</div>
                             <div className='h-[4rem] w-[10rem] bg-indigo-600 hidden lg:flex' />
