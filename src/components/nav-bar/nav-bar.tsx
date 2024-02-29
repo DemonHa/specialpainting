@@ -47,7 +47,7 @@ const Navbar = () => {
         </div>
         {/* menu for big screens */}
         <div className="hidden xl:flex justify-between text-xl">
-          {bigMenuData.map((item) => <NavBarLink text={item.label} link={item.link} filled={item.filled} />)}
+          {bigMenuData.map((item, index) => <NavBarLink key={index} text={item.label} link={item.link} filled={item.filled} />)}
         </div>
       </div>
       {/* menu for small screens */}
@@ -64,11 +64,12 @@ const Navbar = () => {
             <div className="w-[30vw] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border min-h-[35rem]" style={{ height: smallMenuHeight }}></div>
             <div className="z-10 bg-background-white dark:bg-background-dark flex flex-col justify-between w-[70vw]  min-h-[35rem]" style={{ height: smallMenuHeight }}>
               <div>
-                {smallMenuData.map((item) => {
+                {smallMenuData.map((item, index) => {
                   if (item.isTitle) {
-                    return <div className={menuTitleStyles}>{item.label}</div>
+                    return <div key={index} className={menuTitleStyles}>{item.label}</div>
                   } else {
                     return <Link
+                      key={index}
                       onClick={() => {
                         setOpen((prev) => !prev);
                       }}
