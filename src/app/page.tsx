@@ -7,7 +7,6 @@ import Footer from "@/features/home/footer";
 import Language from "@/features/home/footer/language";
 import Achivements from "@/features/home/main/achivements";
 import Contact from "@/features/home/footer/contact";
-import { Header } from "@/features/home/main/header";
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <Main>
         <Description />
         <Statistics />
-        <Header />
         <Achivements />
         <Testimonials />
       </Main>
