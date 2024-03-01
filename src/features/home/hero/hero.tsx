@@ -14,6 +14,7 @@ const templates = [
     button: "Get an estimate",
     color: "bg-orange-500",
     hex: "#f97315",
+    textColor: "text-black dark:text-white",
   },
   {
     title: "AI innovation",
@@ -22,6 +23,7 @@ const templates = [
     button: "Read The Report",
     color: "bg-green-400",
     hex: "#49de80",
+    textColor: "text-black dark:text-white",
   },
   {
     title: "Expert software development",
@@ -30,6 +32,7 @@ const templates = [
     button: "Explore Services",
     color: "bg-fuchsia-400",
     hex: "#e979f9",
+    textColor: "text-black dark:text-white",
   },
   {
     title: "Exceptional customer service",
@@ -38,6 +41,7 @@ const templates = [
     button: "Schedule a call",
     color: "bg-indigo-600",
     hex: "#5046e5",
+    textColor: "text-white",
   },
 ];
 
@@ -60,7 +64,7 @@ const Hero = () => {
     <>
       <div className="grid grid-cols-[3fr_13fr] md:grid-cols-[4fr_14fr] lg:grid-cols-2 xl:grid-rows-[auto_max-content] lg:grid-rows-[280px_max-content] gap-0 p-5 md:pt-14 lg:pt-5">
         <div
-          className={`flex flex-1 min-h-[200px] lg:min-h-[calc(143px+136*((100vw-1080px)/840))] items-center ${template.color}`}
+          className={`flex flex-1 min-h-[200px] lg:min-h-[calc(143px+136*((100vw-1080px)/840))] items-center ${template.color} ${template.textColor}`}
         >
           <TextAnimationWrapper
             text={template.title}
@@ -92,10 +96,10 @@ const Hero = () => {
                 text={template.description}
               />
               <button
-                className={`w-full ${template.color} mt-4 xl:mt-8 px-3 xl:px-6 py-2 xl:py-4 flex justify-between items-center`}
+                className={`w-full ${template.color} ${template.textColor} mt-4 xl:mt-8 px-3 xl:px-6 py-2 xl:py-4 flex justify-between items-center`}
               >
                 <TextAnimationWrapper
-                  className="text-sm xl:text-2xl"
+                  className="text-sm xl:text-xl"
                   text={template.button}
                 />
                 <MdArrowOutward size={30} />
@@ -125,7 +129,7 @@ const Hero = () => {
         </div>
       </div>
       <button
-        className={`lg:hidden w-full ${template.color} px-3 py-6 flex justify-between items-center`}
+        className={`lg:hidden w-full ${template.color} ${template.textColor} px-3 py-6 flex justify-between items-center`}
       >
         <TextAnimationWrapper className="text-2xl" text={template.button} />
         <MdArrowOutward size={30} />

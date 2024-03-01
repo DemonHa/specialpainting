@@ -26,7 +26,7 @@ const Achivements = () => {
           return (
             <div
               key={index}
-              className={`flex py-10  justify-center border-b border-slate-700 lg:border-r ${index % 2 === 0 || index === 0 ? "max-lg:border-r" : ""}`}
+              className={`flex py-10  justify-center border-b border-gray-300 dark:border-slate-700 lg:border-r ${index % 2 === 0 || index === 0 ? "max-lg:border-r" : ""}`}
             >
               <Image
                 className="w-[120px] h-[120px] grayscale object-contain"
