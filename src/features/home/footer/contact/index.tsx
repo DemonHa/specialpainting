@@ -23,12 +23,12 @@ const Contact = () => {
           <div className='flex flex-col justify-end'>
             <textarea style={prefilledStyles} className='w-full bg-inherit border-b border-slate-700 h-48 resize-none focus:outline-none py-5 px-5 min-md:px-8 max-lg:h-20' placeholder='How can we help you?' />
             <div className='flex justify-between w-full items-center py-4 lg:py-0'>
-              <div className='min-md:ml-8 text-lg font-semibold ml-5'>Fill the fields above and click send, we will respond as soon as possible via emial or phone call.</div>
+              <div className='min-md:ml-8 text-lg ml-5'>Fill the fields above and click send, we will respond as soon as possible via emial or phone call.</div>
               <div className='h-[4rem] min-w-[15vw] bg-indigo-600 hidden lg:flex' />
             </div>
           </div>
         </div>
-        <button className='h-[5rem] w-full flex justify-between items-center px-5 min-md:px-7 bg-indigo-600 hover:bg-indigo-400  lg:hidden'><div className='text-xl font-bold max-md:text-sm'>Send</div> <MdArrowOutward size={34} /></button>
+        <button className='h-[5rem] w-full flex justify-between items-center px-5 min-md:px-7 bg-indigo-600 hover:bg-indigo-400  lg:hidden'><div className='text-xl font-bold'>Send</div> <MdArrowOutward size={34} /></button>
       </div>
       <div className='flex-col hidden justify-end lg:flex'>
         <button className='h-[10rem] min-w-[20vw]  bg-indigo-600 text-2xl font-semibold hover:bg-indigo-400'>Send</button>
