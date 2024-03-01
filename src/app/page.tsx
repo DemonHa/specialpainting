@@ -18,10 +18,10 @@ export default function Home() {
         <Achivements />
         <Testimonials />
       </Main>
-    <Footer>
-      <Language />
-      <Contact />
-    </Footer>
+      <Footer>
+        <Language />
+        <Contact />
+      </Footer>
     </>
   );
 }
