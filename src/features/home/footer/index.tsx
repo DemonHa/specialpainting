@@ -11,7 +11,6 @@ const Footer = ({
         </div>
         <div className="flex-1 divide-y divide-gray-300 dark:divide-slate-700">
           <>{children}</>
-          <div className="hidden lg:flex h-[100px]"></div>
         </div>
       </div>
     );
