@@ -1,17 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import screenedApproved from "@/../../public/screened_approved.png";
-import topRated from "@/../../public/top_rated.png";
-import eliteService from "@/../../public/elite_service.png";
-import { Header } from "../header";
+import soapImage from "@/../../public/images/soap.webp";
+import oneYearImage from "@/../../public/images/1year.webp";
+import twentyReviewsImage from "@/../../public/images/20reviews.webp";
+import eliteImage from "@/../../public/images/elite.webp";
+import ssaImage from "@/../../public/images/ssa-2023.webp";
+import topRatedImage from "@/../../public/images/toprated.webp";
+import { Header } from "./header";
 
 const images = [
-  screenedApproved,
-  topRated,
-  eliteService,
-  screenedApproved,
-  screenedApproved,
-  screenedApproved,
+  soapImage,
+  topRatedImage,
+  eliteImage,
+  ssaImage,
+  oneYearImage,
+  twentyReviewsImage,
 ];
 
 const Achivements = () => {
@@ -26,7 +29,7 @@ const Achivements = () => {
               className={`flex py-10  justify-center border-b border-slate-700 lg:border-r ${index % 2 === 0 || index === 0 ? "max-lg:border-r" : ""}`}
             >
               <Image
-                className="w-[120px] h-[120px]"
+                className="w-[120px] h-[120px] grayscale object-contain"
                 priority={false}
                 src={image}
                 alt={"achievement-img"}
