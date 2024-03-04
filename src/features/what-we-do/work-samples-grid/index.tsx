@@ -1,19 +1,16 @@
 "use client";
 
-import React, { useState } from 'react'
-import FilterTabs from './filter-tabs'
+import React, { useState } from "react";
+import FilterTabs from "./filter-tabs";
 
 const WorkSamplesGrid = () => {
-
-
-  const [filters, setFilters] = useState(null)
+  const [filters, setFilters] = useState(null);
 
   return (
-    <div className='flex flex-col'>
-      <FilterTabs filters={filters} setFilters={setFilters}/>
-      <div>Grid Here</div>
+    <div className="flex flex-col">
+      <FilterTabs filters={filters} setFilters={setFilters} />
     </div>
-  )
-}
+  );
+};
 
-export default WorkSamplesGrid
+export default WorkSamplesGrid;
