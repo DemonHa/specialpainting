@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav-bar";
 import GeneralFooter from "@/components/general-footer";
+import { DarkModeProvider } from "@/features/darkmode";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="p-0 m-0 h-full">
       <body className="bg-background-white dark:bg-background-dark text-black dark:text-white overflow-x-hidden p-0 m-0 h-full">
-        <Navbar />
-        {children}
-        <GeneralFooter />
+        <Providers>
+          <Navbar />
+          {children}
+          <GeneralFooter />
+        </Providers>
       </body>
     </html>
   );
