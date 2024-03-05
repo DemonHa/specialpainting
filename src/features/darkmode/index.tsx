@@ -36,7 +36,7 @@ const useDarkMode = () => {
 
 const FloatingDarkMode = () => {
   return (
-    <div className="fixed z-[9] bottom-8 left-4">
+    <div className="hidden xl:flex fixed z-[9] bottom-8 left-4">
       <ThemeSwitcher size="small" filled />
     </div>
   );

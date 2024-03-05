@@ -8,6 +8,7 @@ import AnimatedMenuButton from "./animated-menu-button";
 import { motion, AnimatePresence } from "framer-motion";
 import { smallMenuData, bigMenuData } from "./utils/menu-data";
 import useSmallScreenMenuHeight from "./utils/use-small-screen-menu-height";
+import ThemeSwitcher from "../theme-switcher";
 
 const menuTitleStyles =
   "h-[6rem] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
@@ -69,6 +70,9 @@ const Navbar = () => {
               className="w-[30vw] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border min-h-[35rem]"
               style={{ height: smallMenuHeight }}
             ></div>
+            <div className="absolute left-4 bottom-2">
+              <ThemeSwitcher filled />
+            </div>
             <div
               className="z-10 bg-background-white dark:bg-background-dark flex flex-col justify-between w-[70vw]  min-h-[35rem]"
               style={{ height: smallMenuHeight }}
