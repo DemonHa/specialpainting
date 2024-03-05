@@ -1,3 +1,4 @@
+import ThemeSwitcher from "@/components/theme-switcher";
 import { createContext, useContext, useState } from "react";
 
 const DarkModeContext = createContext({
@@ -24,12 +25,21 @@ const DarkModeProvider = ({
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode: handleDarkMode }}>
       {children}
+      <FloatingDarkMode />
     </DarkModeContext.Provider>
   );
 };
 
 const useDarkMode = () => {
   return useContext(DarkModeContext);
+};
+
+const FloatingDarkMode = () => {
+  return (
+    <div className="fixed z-[9] bottom-8 left-4">
+      <ThemeSwitcher size="small" filled />
+    </div>
+  );
 };
 
 export { DarkModeProvider, useDarkMode };
