@@ -1,5 +1,11 @@
 import ThemeSwitcher from "@/components/theme-switcher";
-import { createContext, useContext, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const DarkModeContext = createContext({
   darkMode: false,
@@ -11,16 +17,27 @@ const DarkModeProvider = ({
 }: {
   children?: React.ReactNode | React.ReactNode[];
 }) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const key = "darkMode";
+  const isBrowser = typeof window !== "undefined";
 
-  const handleDarkMode = (value: boolean) => {
+  const [darkMode, setDarkMode] = useState(
+    isBrowser && localStorage.getItem(key) === "true",
+  );
+
+  const handleDarkMode = useCallback((value: boolean) => {
     if (value) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem(key, "true");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem(key, "false");
     }
     setDarkMode(value);
-  };
+  }, []);
+
+  useEffect(() => {
+    handleDarkMode(darkMode);
+  }, [darkMode, handleDarkMode]);
 
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode: handleDarkMode }}>
