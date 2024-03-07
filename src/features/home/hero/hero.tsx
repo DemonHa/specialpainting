@@ -12,8 +12,8 @@ const templates = [
     description:
       "Vention developers partner with innovative companies from startups to Fortune 500s, lending the AI engineering expertise to propel them to new heights and the edge to outpace the competition.",
     button: "Get an estimate",
-    color: "bg-orange-500",
-    hex: "#f97315",
+    color: "bg-lightRed",
+    hex: "#BE3144",
     textColor: "text-black dark:text-white",
   },
   {
@@ -21,8 +21,8 @@ const templates = [
     description:
       "As pioneers in AI engineering, we view it as more than a shiny tool: it's a pillar of the new business normal. Those companies that embrace and leverage AI will set the standard and lead in their category. In our new State of AI report, we look at funding, investment, and valuation trends across the AI market.",
     button: "Read The Report",
-    color: "bg-green-400",
-    hex: "#49de80",
+    color: "bg-jeans",
+    hex: "#124076",
     textColor: "text-black dark:text-white",
   },
   {
@@ -30,8 +30,8 @@ const templates = [
     description:
       "Get it done right — the first time. Our proven software expertise and engagement flexibility mean you don't have to worry about timelines, processes, or outcomes. Proficient in web, mobile, cloud, and advanced tech like AI and VR, we empower you to innovate and grow your business at the scale and speed of future trends.",
     button: "Explore Services",
-    color: "bg-fuchsia-400",
-    hex: "#e979f9",
+    color: "bg-customOrange",
+    hex: "#F05941",
     textColor: "text-black dark:text-white",
   },
   {
@@ -39,8 +39,8 @@ const templates = [
     description:
       "At Vention, unparalleled customer care isn't just a promise — it's our mission. We blend personalized experience, unwavering attention to detail, and a genuine passion for your business, ensuring that every aspect of our collaboration is tailored to your success.",
     button: "Schedule a call",
-    color: "bg-indigo-600",
-    hex: "#5046e5",
+    color: "bg-darkRed",
+    hex: "#872341",
     textColor: "text-white",
   },
 ];

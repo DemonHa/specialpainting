@@ -55,8 +55,8 @@ const Testimonials = () => {
   const testimonial = testimonials[page];
 
   return (
-    <div className="bg-fuchsia-400 px-6 pt-10 sm:pt-20 pb-10 flex flex-col sm:flex-row gap-5 sm:gap-10 md:gap-20 lg:gap-28">
-      <div className="flex flex-col-reverse items-end sm:items-start sm:flex-col gap-5 sm:gap-14 text-black">
+    <div className="dark:bg-darkJeans bg-teal-600 px-6 pt-10 sm:pt-20 pb-10 flex flex-col sm:flex-row gap-5 sm:gap-10 md:gap-20 lg:gap-28">
+      <div className="flex flex-col-reverse items-end sm:items-start sm:flex-col gap-5 sm:gap-14 dark:text-white text-black">
         <div className="flex flex-row sm:flex-col gap-3 w-[100%]">
           <div className="w-20 sm:w-44">
             <img
@@ -66,8 +66,12 @@ const Testimonials = () => {
             />
           </div>
           <div>
-            <div className="font-bold text-lg">{testimonial.name}</div>
-            <div>{testimonial.location}</div>
+            <div className="font-bold text-lg dark:text-white text-black">
+              {testimonial.name}
+            </div>
+            <div className="dark:text-white text-black">
+              {testimonial.location}
+            </div>
           </div>
         </div>
         <div className="flex gap-3">
@@ -87,11 +91,13 @@ const Testimonials = () => {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col gap-12 text-black">
+      <div className="flex flex-col gap-12 dark:text-white text-black">
         <div className="font-bold text-2xl lg:text-4xl">
           “{testimonial.title}
         </div>
-        <div>{testimonial.description}”</div>
+        <div className="dark:text-white text-black text-lg w-[120ch] font-semibold">
+          {testimonial.description}”
+        </div>
       </div>
     </div>
   );
