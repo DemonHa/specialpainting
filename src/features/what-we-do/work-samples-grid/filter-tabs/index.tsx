@@ -20,11 +20,11 @@ const FilterTabs = ({ filters, gridView, setFilters, setGridView }: PropTypes) =
   return (
     <div className='flex divide-x divide-slate-700 border-b border-slate-700'>
       <div className='flex flex-1 divide-x divide-slate-700 justify-center max-md:hidden'>
-        <ExpandableMenu filters={filters} setFilters={setFilters} type='comercial' />
-        <ExpandableMenu filters={filters} setFilters={setFilters} type='residential' />
+        <ExpandableMenu filters={filters} setFilters={setFilters} type='comercial' screenSize='big'/>
+        <ExpandableMenu filters={filters} setFilters={setFilters} type='residential' screenSize='big'/>
       </div>
       <div className='w-full hidden max-md:flex'>
-        <CustomSelect />
+        <CustomSelect filters={filters} setFilters={setFilters}/>
       </div>
       <div className='flex md:w-[65vw] justify-between divide-x divide-slate-700'>
         <div className='flex flex-1 max-md:hidden'>
