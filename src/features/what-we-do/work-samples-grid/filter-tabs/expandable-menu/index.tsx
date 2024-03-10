@@ -1,9 +1,9 @@
-import React, { useState, useCallback } from 'react'
-import { IoIosArrowDown } from "react-icons/io";
+import React, { useState } from 'react'
+import { RiArrowDownSLine } from "react-icons/ri";
 import { FilterSchemaTypes } from '../../index';
 import { IoMdCheckmark } from "react-icons/io";
-import defaultFilters from '../../utils/defaultFilters';
-
+import defaultFilters from '../../utils/default-filters';
+import { motion } from "framer-motion";
 
 type OuterFilterTypes = 'comercial' | 'residential';
 
@@ -14,7 +14,7 @@ type PropTypes = {
   setFilters: React.Dispatch<React.SetStateAction<FilterSchemaTypes>>;
   type: OuterFilterTypes;
   screenSize: 'small' | 'big';
-  className?:string;
+  className?: string;
 }
 
 const ExpandableMenu = ({ setFilters, filters, type, screenSize, className }: PropTypes) => {
@@ -72,16 +72,27 @@ const ExpandableMenu = ({ setFilters, filters, type, screenSize, className }: Pr
       onMouseLeave={() => { screenSize === 'big' && setHovered(false) }}
       className={`flex flex-col w-full relative ${className}`}
     >
-      <div className={`flex space-x-1 items-center w-full px-10 py-5 text-[16px] cursor-pointer ${isOuterFilterActivated(type) ? 'bg-red-500' : screenSize === 'big'&&' hover:bg-red-300'}`}>
-        <div className={`${screenSize === 'small' && 'text-2xl'}`}>{capitalizeFirstLetter(type)}</div>
-        <div className='pt-1'><IoIosArrowDown /></div>
+      <div className={`flex space-x-1 items-center w-full px-10 py-5 text-[16px] cursor-pointer ${isOuterFilterActivated(type) ? 'dark:bg-red-500 dark:text-white bg-filter-dark text-orange-500 ' : screenSize === 'big' && ' hover:bg-red-300'}`}>
+        <div className='text-2xl'>{capitalizeFirstLetter(type)}</div>
+        <motion.div
+          initial={'up'}
+          animate={hovered ? 'up' : 'down'}
+          variants={{
+            up: { transform: 'rotateX(-180deg)'},
+            down: { transform: 'rotateX(0deg)' }
+          }}
+          transition={{ duration: 0.2 }}
+          className='mt-1.5 font-semibold'
+        >
+          <RiArrowDownSLine size={'1.5rem'} />
+        </motion.div>
       </div>
-      <div className={`${screenSize === 'small' ? 'relative' : 'absolute'} flex-col w-full dark:bg-background-dark ${screenSize === "big" && 'top-full'} z-20 ${!hovered && 'hidden'}`}>
-        <div onClick={(e) => { handleFilterChange(e, filters, type, 'interior') }} className={`flex items-center space-x-1 px-10 py-5 text-[16px] cursor-pointer ${screenSize === 'big'&& 'hover:text-red-300'} ${isInnerFilterActivated(filters, 'interior', type) && 'text-red-300'}`}>
-          {isInnerFilterActivated(filters, 'interior', type) && <IoMdCheckmark />}
+      <div className={`${screenSize === 'small' ? 'relative' : 'absolute'} flex-col w-full dark:bg-background-dark  bg-white ${screenSize === "big" && 'top-full'} z-20 ${!hovered && 'hidden'}`}>
+        <div onClick={(e) => { handleFilterChange(e, filters, type, 'interior') }} className={`flex items-center space-x-1 px-10 py-5 text-[16px] cursor-pointer ${screenSize === 'big' && 'dark:hover:text-red-300 '} ${isInnerFilterActivated(filters, 'interior', type) && 'dark:text-red-300'}`}>
+          {isInnerFilterActivated(filters, 'interior', type) && <IoMdCheckmark size={'1rem'} />}
           <div>Interior</div>
         </div>
-        <div onClick={(e) => { handleFilterChange(e, filters, type, 'exterior') }} className={`flex items-center space-x-1 px-10 py-5 text-[16px] cursor-pointer ${screenSize === 'big'&& 'hover:text-red-300'} ${isInnerFilterActivated(filters, 'exterior', type) && 'text-red-300'}`}>
+        <div onClick={(e) => { handleFilterChange(e, filters, type, 'exterior') }} className={`flex items-center space-x-1 px-10 py-5 text-[16px] cursor-pointer ${screenSize === 'big' && 'dark:hover:text-red-300 '} ${isInnerFilterActivated(filters, 'exterior', type) && 'dark:text-red-300'}`}>
           {isInnerFilterActivated(filters, 'exterior', type) && <IoMdCheckmark />}
           <div>Exterior</div>
         </div>
