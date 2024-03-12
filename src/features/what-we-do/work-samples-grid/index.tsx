@@ -30,7 +30,7 @@ const WorkSamplesGrid = () => {
 
   return (
     <div className='flex flex-col'>
-      <FilterTabs filters={filters} setFilters={setFilters} gridView={gridView} setGridView={setGridView} />
+      <FilterTabs filters={filters} setFilters={setFilters} gridView={gridView} setGridView={setGridView} totalCount={filteredData.length}/>
       <PortfolioGrid portofolioData={filteredData} gridView={gridView} />
     </div>
   );

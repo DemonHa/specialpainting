@@ -1,21 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, MotionStyle } from "framer-motion";
 
-const movingPartStyle: MotionStyle = {
-  paddingBottom: '10rem',
-  position: "absolute",
-  height: "200%",
-  width: "200%",
-  bottom: "-50%",
-  left: "-50%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "50%",
-  background: "url(https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D)",
-  backgroundSize: "cover",
-};
-
 const rotatingPartStyle: MotionStyle = {
   height: "150%",
   width: "150%",
@@ -54,8 +39,10 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: ` center no-repeat url(/images/portfolio/${imageBefore})`,
-    backgroundSize: "cover", // This ensures the background covers the entire container
+    backgroundImage: `url(/images/portfolio/${imageBefore})`,
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover", 
   };
 
   const movingPartStyle: MotionStyle = {
@@ -69,9 +56,12 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "50%",
-    background: `center url(/images/portfolio/${imageAfter})`,
-    backgroundSize: "auto",
+    backgroundImage: `url(/images/portfolio/${imageAfter})`, 
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "auto", 
   };
+  
 
   return (
     <motion.div

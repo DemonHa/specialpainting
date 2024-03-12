@@ -12,10 +12,11 @@ type PropTypes = {
   filters: FilterSchemaTypes;
   gridView: boolean;
   setFilters: React.Dispatch<React.SetStateAction<FilterSchemaTypes>>;
-  setGridView: React.Dispatch<React.SetStateAction<boolean>>
+  setGridView: React.Dispatch<React.SetStateAction<boolean>>;
+  totalCount: number;
 }
 
-const FilterTabs = ({ filters, gridView, setFilters, setGridView }: PropTypes) => {
+const FilterTabs = ({ filters, gridView, setFilters, setGridView, totalCount }: PropTypes) => {
 
   return (
     <div className='flex divide-x dark:divide-slate-700 divide-gray-300 border-b dark:border-slate-700 border-gray-300'>
@@ -24,7 +25,7 @@ const FilterTabs = ({ filters, gridView, setFilters, setGridView }: PropTypes) =
         <ExpandableMenu filters={filters} setFilters={setFilters} type='residential' screenSize='big'/>
       </div>
       <div className='w-full hidden max-md:flex'>
-        <CustomSelect filters={filters} setFilters={setFilters}/>
+        <CustomSelect filters={filters} setFilters={setFilters} totalCount={totalCount}/>
       </div>
       <div className='flex md:w-[65vw] justify-between divide-x dark:divide-slate-700 divide-gray-300'>
         <div className='flex flex-1 max-md:hidden'>
