@@ -31,7 +31,7 @@ const FilterTabs = ({ filters, gridView, setFilters, setGridView, totalCount }: 
         <div className='flex flex-1 max-md:hidden'>
           <div onClick={() => { setFilters(defaultFilters) }} className={`flex px-8 text-[16px] underline items-center cursor-pointer ${filters.isClean && 'hidden'}`} style={{ textUnderlineOffset: '4px' }}>Clear all</div>
         </div>
-        <div className='flex divide-x dark:divide-slate-700 divide-gray-300 justify-between w-[15ch] items-center'>
+        <div className='flex divide-x dark:divide-slate-700 divide-gray-300 justify-between w-[15ch] items-center max-sm:hidden'>
           <div onClick={() => { setGridView(true) }} className={`h-full w-full flex justify-center items-center cursor-pointer ${gridView ? 'opacity-[1]' : 'opacity-[0.5]'}`}>
             <MdOutlineGridView size={30} />
           </div>

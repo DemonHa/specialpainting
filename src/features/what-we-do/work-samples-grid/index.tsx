@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useMemo } from 'react';
 import FilterTabs from './filter-tabs';
-import defaultFilters from './utils/default-filters';
 import PortfolioGrid from './portfolio-grid';
+import Pagination from './Pagination';
+import defaultFilters from './utils/default-filters';
 import { portfolioGridData } from './utils/portfolio-grid-data';
 
 export type FilterTypes = {
@@ -12,7 +13,7 @@ export type FilterTypes = {
 
 export type FilterSchemaTypes = {
   residential: FilterTypes;
-  comercial: FilterTypes; 
+  comercial: FilterTypes;
   isClean: boolean;
   [key: string]: any;
 };
@@ -20,6 +21,7 @@ export type FilterSchemaTypes = {
 const WorkSamplesGrid = () => {
   const [filters, setFilters] = useState<FilterSchemaTypes>(defaultFilters);
   const [gridView, setGridView] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const filteredData = useMemo(() => {
     if (filters.isClean) {
@@ -28,10 +30,19 @@ const WorkSamplesGrid = () => {
     return portfolioGridData.filter((item) => filters[item.outerFilter][item.innerFilter]);
   }, [filters]);
 
+  const currentPageData = useMemo(() => {
+
+    const initialIndex = ((currentPage - 1) * 6);
+    const endIndex = initialIndex + 5;
+    return filteredData.filter((item, index) => index >= initialIndex && index <= endIndex);
+
+  }, [filteredData, currentPage])
+
   return (
     <div className='flex flex-col'>
-      <FilterTabs filters={filters} setFilters={setFilters} gridView={gridView} setGridView={setGridView} totalCount={filteredData.length}/>
-      <PortfolioGrid portofolioData={filteredData} gridView={gridView} />
+      <FilterTabs filters={filters} setFilters={setFilters} gridView={gridView} setGridView={setGridView} totalCount={filteredData.length} />
+      <PortfolioGrid portofolioData={currentPageData} gridView={gridView} />
+      <Pagination currentPage={currentPage} totalItems={filteredData.length} setCurrentPage={setCurrentPage}/>
     </div>
   );
 };
