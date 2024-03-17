@@ -8,13 +8,13 @@ import AnimatedMenuButton from "./animated-menu-button";
 import { motion, AnimatePresence } from "framer-motion";
 import { smallMenuData, bigMenuData } from "./utils/menu-data";
 import useSmallScreenMenuHeight from "./utils/use-small-screen-menu-height";
+import ThemeSwitcher from "../theme-switcher";
 
 
 const menuTitleStyles =
   "h-[6rem] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
 const menuLinkStyles =
   "h-[4rem] flex justify-start items-end py-3 px-7 text-xl font-semibold border-b border-gray-300 dark:border-slate-700 text-black dark:text-orange-300 cursor-pointer";
-
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -33,7 +33,6 @@ const Navbar = () => {
     };
   }, [open]);
 
-
   return (
     <div className="sticky top-0 bg-inherit z-20">
       <div className="flex justify-between w-full border-b border-gray-300 dark:border-slate-700 divide-x divide-gray-300 dark:divide-slate-700 h-[4rem]">
@@ -46,8 +45,15 @@ const Navbar = () => {
           <AnimatedMenuButton setOpen={setOpen} open={open} />
         </div>
         {/* menu for big screens */}
-        <div className="hidden xl:flex justify-between text-xl w-[65vw]">
-          {bigMenuData.map((item, index) => <NavBarLink key={index} text={item.label} link={item.link} filled={item.filled} />)}
+        <div className="hidden xl:flex justify-between text-xl">
+          {bigMenuData.map((item, index) => (
+            <NavBarLink
+              key={index}
+              text={item.label}
+              link={item.link}
+              filled={item.filled}
+            />
+          ))}
         </div>
       </div>
       {/* menu for small screens */}
@@ -61,22 +67,37 @@ const Navbar = () => {
             className="z-10 absolute w-full overflow-hidden overflow-y-auto top-[4rem] flex xl:hidden"
             style={{ height: smallMenuHeight }} // Directly apply dynamic height for real-time updates
           >
-            <div className="w-[30vw] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border min-h-[35rem]" style={{ height: smallMenuHeight }}></div>
-            <div className="z-10 bg-background-white dark:bg-background-dark flex flex-col justify-between w-[70vw]  min-h-[35rem]" style={{ height: smallMenuHeight }}>
+            <div
+              className="w-[30vw] bg-glass-bg bg-opacity-35 shadow-glass backdrop-blur-glass border border-glass-border min-h-[35rem]"
+              style={{ height: smallMenuHeight }}
+            ></div>
+            <div className="absolute left-4 bottom-2">
+              <ThemeSwitcher filled />
+            </div>
+            <div
+              className="z-10 bg-background-white dark:bg-background-dark flex flex-col justify-between w-[70vw]  min-h-[35rem]"
+              style={{ height: smallMenuHeight }}
+            >
               <div>
                 {smallMenuData.map((item, index) => {
                   if (item.isTitle) {
-                    return <div key={index} className={menuTitleStyles}>{item.label}</div>
+                    return (
+                      <div key={index} className={menuTitleStyles}>
+                        {item.label}
+                      </div>
+                    );
                   } else {
-                    return <Link
-                      key={index}
-                      onClick={() => {
-                        setOpen((prev) => !prev);
-                      }}
-                      href={item.link}
-                    >
-                      <div className={menuLinkStyles}>{item.label}</div>
-                    </Link>
+                    return (
+                      <Link
+                        key={index}
+                        onClick={() => {
+                          setOpen((prev) => !prev);
+                        }}
+                        href={item.link}
+                      >
+                        <div className={menuLinkStyles}>{item.label}</div>
+                      </Link>
+                    );
                   }
                 })}
               </div>
