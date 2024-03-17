@@ -10,6 +10,7 @@ import { smallMenuData, bigMenuData } from "./utils/menu-data";
 import useSmallScreenMenuHeight from "./utils/use-small-screen-menu-height";
 import ThemeSwitcher from "../theme-switcher";
 
+
 const menuTitleStyles =
   "h-[6rem] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
 const menuLinkStyles =
