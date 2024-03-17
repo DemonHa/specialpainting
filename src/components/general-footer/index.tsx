@@ -3,7 +3,7 @@ import ThemeSwitcher from "../theme-switcher";
 
 const GeneralFooter = () => {
   return (
-    <div className=" flex max-lg:flex-col-reverse max-lg:divide-y bg-background-dark dark:bg-background-white divide-x dark:divide-gray-300 divide-slate-700 dark:text-black text-white min-h-fit">
+    <div className="flex relative z-10 max-lg:flex-col-reverse max-lg:divide-y bg-background-dark dark:bg-background-white divide-x dark:divide-gray-300 divide-slate-700 dark:text-black text-white min-h-fit">
       <div className=" w-[100px] min-w-[100px] h-[100px] max-lg:hidden" />
       <div className="hidden max-md:flex items-center justify-center py-4 space-x-3">
         <ThemeSwitcher />
