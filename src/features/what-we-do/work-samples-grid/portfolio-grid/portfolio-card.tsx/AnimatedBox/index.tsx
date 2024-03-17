@@ -1,29 +1,42 @@
-import React, { useState } from "react";
-import { motion, MotionStyle } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, MotionStyle, useAnimate } from "framer-motion";
 import { useWindowDimensions } from "../../../state/use-window-dimensions";
 
-const riseAnimation = {
-  animate: { translateY: 0 },
-  initial: { translateY: "-100%" },
-  transition: { duration: 2.5, ease: "easeInOut" },
-};
-
-const rotateAnimation = {
-  initial: { rotate: 0 },
-  animate: { rotate: 400 },
-  transition: { duration: 2.5, ease: "easeInOut" },
-};
-
 const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBefore: string }) => {
-  
+
   const [hover, setHover] = useState(false);
-  const {width} = useWindowDimensions();
+  const { width } = useWindowDimensions();
+  const [rotateScope, animateRotate] = useAnimate();
+  const [moveScope, animateMove] = useAnimate();
+
+  const rotateAnimate = async (hover: boolean) => {
+    if (hover) {
+      await animateRotate(rotateScope.current, { rotate: 400 }, { duration: 2.5, ease: "easeIn" })
+      await animateRotate(rotateScope.current, { background: "radial-gradient(circle at center, transparent 100%, rgba(244, 67, 54, 1) 70%)" }, { duration: 2.5, ease: "easeInOut" })
+    } else {
+      await animateRotate(rotateScope.current, { background: "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)" }, { duration: 1.5, ease: "easeInOut" })
+      animateRotate(rotateScope.current, { rotate: 0 }, { duration: 2.5, ease: "easeInOut" })
+    }
+  };
+  
+  const moveAnimate = async(hover: boolean) => {
+    if(hover){
+      animateMove(moveScope.current, { translateY: 0 }, {duration: 2.5, ease: "easeInOut"})
+    }else{
+      animateMove(moveScope.current, { translateY: "-100%" }, {duration: 2.5, ease: "easeInOut", delay: 1.5})
+    }
+  }
+
+  useEffect(() => {
+    rotateAnimate(hover);
+    moveAnimate(hover);
+  }, [hover])
 
   const rotatingPartStyle: MotionStyle = {
     position: "absolute",
     bottom: '-5%',
-    height: width > 1024 ? "200%" : width <= 768 ? "200%":"180%", 
-    width: width > 1024 ? "160%" : width <= 768 ? "145%":"150%",
+    height: width > 1024 ? "200%" : width <= 768 ? "200%" : "180%",
+    width: width > 1024 ? "160%" : width <= 768 ? "145%" : "150%",
     border: "5rem solid rgba(244, 67, 54, 1)",
     borderRadius: width > 768 ? "35%" : "48%",
     background: "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)",
@@ -45,9 +58,9 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     alignItems: "center",
     justifyContent: "center",
     backgroundImage: `url(/images/portfolio/${imageBefore})`,
-    backgroundPosition: "center", 
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover", 
+    backgroundSize: "cover",
     cursor: "url('/images/paint-brush.png'), pointer"
   };
 
@@ -62,12 +75,12 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "50%",
-    backgroundImage: `url(/images/portfolio/${imageAfter})`, 
-    backgroundPosition: "center", 
+    backgroundImage: `url(/images/portfolio/${imageAfter})`,
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: `contain`, 
+    backgroundSize: `contain`,
   };
-  
+
 
   return (
     <motion.div
@@ -75,16 +88,15 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
       onClick={() => setHover((prev) => !prev)}
     >
       <motion.div
+        ref={moveScope}
         style={movingPartStyle}
-        initial={riseAnimation.initial}
-        animate={hover ? riseAnimation.animate : riseAnimation.initial}
-        transition={riseAnimation.transition}
+        initial={{
+          translateY: "-100%"
+        }}
       >
         <motion.div
+          ref={rotateScope}
           style={rotatingPartStyle}
-          initial={rotateAnimation.initial}
-          animate={hover ? rotateAnimation.animate : rotateAnimation.initial}
-          transition={rotateAnimation.transition}
         />
       </motion.div>
     </motion.div>
