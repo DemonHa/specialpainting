@@ -14,7 +14,7 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
       await animateRotate(rotateScope.current, { rotate: 400 }, { duration: 2.5, ease: "easeIn" })
       await animateRotate(rotateScope.current, { background: "radial-gradient(circle at center, transparent 100%, rgba(244, 67, 54, 1) 70%)" }, { duration: 2.5, ease: "easeInOut" })
     } else {
-      await animateRotate(rotateScope.current, { background: "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)" }, { duration: 1.5, ease: "easeInOut" })
+      animateRotate(rotateScope.current, { background: "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)" }, { duration: 1.5, ease: "easeInOut" })
       animateRotate(rotateScope.current, { rotate: 0 }, { duration: 2.5, ease: "easeInOut" })
     }
   };
@@ -23,7 +23,7 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     if(hover){
       animateMove(moveScope.current, { translateY: 0 }, {duration: 2.5, ease: "easeInOut"})
     }else{
-      animateMove(moveScope.current, { translateY: "-100%" }, {duration: 2.5, ease: "easeInOut", delay: 1.5})
+      animateMove(moveScope.current, { translateY: "-100%" }, {duration: 2.5, ease: "easeInOut"})
     }
   }
 
@@ -35,10 +35,10 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
   const rotatingPartStyle: MotionStyle = {
     position: "absolute",
     bottom: '-5%',
-    height: width > 1024 ? "200%" : width <= 768 ? "200%" : "180%",
-    width: width > 1024 ? "160%" : width <= 768 ? "145%" : "150%",
+    height: width > 1024 ? "200%" : width < 768 ? "200%" : "170%",
+    width: width > 1024 ? "160%" : width < 768 ? "145%" : "180%",
     border: "5rem solid rgba(244, 67, 54, 1)",
-    borderRadius: width > 768 ? "35%" : "48%",
+    borderRadius: width > 1024 ? "35%" : "48%",
     background: "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)",
     backgroundSize: "cover",
     backgroundPosition: "center",

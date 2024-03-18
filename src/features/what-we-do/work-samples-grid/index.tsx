@@ -2,7 +2,7 @@
 import React, { useState, useMemo } from 'react';
 import FilterTabs from './filter-tabs';
 import PortfolioGrid from './portfolio-grid';
-import Pagination from './Pagination';
+import Pagination from './pagination';
 import defaultFilters from './utils/default-filters';
 import { portfolioGridData } from './utils/portfolio-grid-data';
 
@@ -46,8 +46,6 @@ const WorkSamplesGrid = () => {
     </div>
   );
 };
-  );
-};
 
-export default WorkSamplesGrid;
+
 export default WorkSamplesGrid;
