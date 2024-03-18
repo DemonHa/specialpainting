@@ -45,7 +45,7 @@ const Navbar = () => {
           <AnimatedMenuButton setOpen={setOpen} open={open} />
         </div>
         {/* menu for big screens */}
-        <div className="hidden xl:flex justify-between text-xl">
+        <div className="hidden xl:flex justify-between text-xl w-[65vw]">
           {bigMenuData.map((item, index) => (
             <NavBarLink
               key={index}

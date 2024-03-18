@@ -1,6 +1,6 @@
-export const WwdHeader = () => {
+export const Header = () => {
   return (
-    <div className="flex flex-col xl:flex-row xl:divide-x xl:divide-slate-700 justify-between border-b border-slate-700">
+    <div className="flex flex-col xl:flex-row xl:divide-x dark:xl:divide-slate-700 xl:divide-gray-300 justify-between border-b dark:border-slate-700 border-gray-300">
       <div className="pl-10 pt-16">
         <div className="text-6xl xl:text-7xl font-bold">Our work</div>
       </div>

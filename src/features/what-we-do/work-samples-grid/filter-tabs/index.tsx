@@ -1,76 +1,41 @@
-import React, { useCallback } from "react";
+import React from 'react'
 import { MdOutlineGridView } from "react-icons/md";
 import { AiOutlineMenu } from "react-icons/ai";
-import { WwdHeader } from "../wwd-header";
-import { Dissapear } from "../wwd-header/dissapear/dissapear";
+import CustomSelect from './custom-select';
+import ExpandableMenu from './expandable-menu';
+import { FilterSchemaTypes } from '..';
+import defaultFilters from '../utils/default-filters';
 
-type FilterTypes = "comercial" | "residential";
 
-type Filters = null | FilterTypes[];
 
 type PropTypes = {
-  filters: Filters;
-  setFilters: React.Dispatch<React.SetStateAction<null | FilterTypes[]>>;
-};
+  filters: FilterSchemaTypes;
+  gridView: boolean;
+  setFilters: React.Dispatch<React.SetStateAction<FilterSchemaTypes>>;
+  setGridView: React.Dispatch<React.SetStateAction<boolean>>;
+  totalCount: number;
+}
 
-const FilterTabs = ({ filters, setFilters }: PropTypes) => {
-  const filterChange = (currFilters: Filters, newFilter: FilterTypes) => {
-    if (!currFilters) {
-      return [newFilter];
-    } else {
-      const productExists = Boolean(
-        currFilters.find((item) => item === newFilter),
-      );
-      if (productExists) {
-        return currFilters.filter((item) => item === newFilter);
-      } else {
-        return [...currFilters, newFilter];
-      }
-    }
-  };
-
-  const handleFIlterChange = (filterClicked: FilterTypes) => () => {
-    setFilters((prevFilters) => filterChange(prevFilters, filterClicked));
-  };
-
-  const isFilterSelected = useCallback(
-    (filter: FilterTypes) => {
-      if (!filters) {
-        return false;
-      }
-
-      return Boolean(filters.find((currFilter) => currFilter === filter));
-    },
-    [filters],
-  );
+const FilterTabs = ({ filters, gridView, setFilters, setGridView, totalCount }: PropTypes) => {
 
   return (
-    <div className="flex divide-x divide-slate-700 border-b border-slate-700">
-      <div className="flex flex-1 divide-x divide-slate-700 justify-center">
-        <div
-          onClick={handleFIlterChange("comercial")}
-          className={`w-full px-10 py-5 text-[16px] cursor-pointer hover:bg-red-500 ${isFilterSelected("comercial") ? "bg-red-500" : ""}`}
-        >
-          Comercial
-        </div>
-        <div
-          onClick={handleFIlterChange("residential")}
-          className={`w-full px-10 py-5 text-[16px] cursor-pointer hover:bg-red-500 ${isFilterSelected("residential") ? "bg-red-500" : ""}`}
-        >
-          Residential
-        </div>
+    <div className='flex divide-x dark:divide-slate-700 divide-gray-300 border-b dark:border-slate-700 border-gray-300'>
+      <div className='flex flex-1 divide-x dark:divide-slate-700 divide-gray-300 justify-center max-md:hidden'>
+        <ExpandableMenu filters={filters} setFilters={setFilters} type='comercial' screenSize='big'/>
+        <ExpandableMenu filters={filters} setFilters={setFilters} type='residential' screenSize='big'/>
       </div>
-      <div className="flex w-[65vw] justify-between divide-x divide-slate-700">
-        <div className="flex flex-1">
-          <div className="flex px-8 text-[16px] underline items-center">
-            Clear all
-          </div>
+      <div className='w-full hidden max-md:flex'>
+        <CustomSelect filters={filters} setFilters={setFilters} totalCount={totalCount}/>
+      </div>
+      <div className='flex md:w-[65vw] justify-between divide-x dark:divide-slate-700 divide-gray-300'>
+        <div className='flex flex-1 max-md:hidden'>
+          <div onClick={() => { setFilters(defaultFilters) }} className={`flex px-8 text-[16px] underline items-center cursor-pointer ${filters.isClean && 'hidden'}`} style={{ textUnderlineOffset: '4px' }}>Clear all</div>
         </div>
-        <div className="flex divide-x divide-slate-700 justify-between w-[15ch] items-center">
-          <div className="h-full w-full flex justify-center items-center">
+        <div className='flex divide-x dark:divide-slate-700 divide-gray-300 justify-between w-[15ch] items-center max-sm:hidden'>
+          <div onClick={() => { setGridView(true) }} className={`h-full w-full flex justify-center items-center cursor-pointer ${gridView ? 'opacity-[1]' : 'opacity-[0.5]'}`}>
             <MdOutlineGridView size={30} />
           </div>
-          <div className="h-full w-full flex justify-center items-center">
+          <div onClick={() => { setGridView(false) }} className={`h-full w-full flex justify-center items-center cursor-pointer ${gridView ? 'opacity-[0.5]' : 'opacity-[1]'}`}>
             <AiOutlineMenu size={30} />
           </div>
         </div>
