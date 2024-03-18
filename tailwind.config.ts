@@ -14,6 +14,12 @@ const config: Config = {
         "glass-border": "rgba(255, 255, 255, 0.18)",
         "background-dark": "#29292b",
         "background-white": "#ebebed",
+        darkRed: "#872341",
+        lightRed: "#BE3144",
+        customOrange: "#F05941",
+        jeans: "#124076",
+        darkJeans: "#0C2D57",
+        lemon: "#FDE767",
         "filter-dark": "#52002D"
       },
       boxShadow: {

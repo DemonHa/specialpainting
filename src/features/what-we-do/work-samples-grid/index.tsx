@@ -46,5 +46,8 @@ const WorkSamplesGrid = () => {
     </div>
   );
 };
+  );
+};
 
+export default WorkSamplesGrid;
 export default WorkSamplesGrid;

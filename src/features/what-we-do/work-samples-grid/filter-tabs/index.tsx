@@ -41,7 +41,7 @@ const FilterTabs = ({ filters, gridView, setFilters, setGridView, totalCount }: 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FilterTabs
+export default FilterTabs;
