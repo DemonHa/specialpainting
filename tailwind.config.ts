@@ -20,6 +20,7 @@ const config: Config = {
         jeans: "#124076",
         darkJeans: "#0C2D57",
         lemon: "#FDE767",
+        "filter-dark": "#52002D"
       },
       boxShadow: {
         glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
