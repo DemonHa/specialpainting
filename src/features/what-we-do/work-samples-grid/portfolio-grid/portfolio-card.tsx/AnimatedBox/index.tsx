@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, MotionStyle, useAnimate } from "framer-motion";
 import { useWindowDimensions } from "../../../state/use-window-dimensions";
+import BeforeAfterIndicator from "../before-after-indicator";
 
 const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBefore: string }) => {
 
@@ -30,6 +31,8 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
   useEffect(() => {
     rotateAnimate(hover);
     moveAnimate(hover);
+    console.log(hover, 'hooover');
+    
   }, [hover])
 
   const rotatingPartStyle: MotionStyle = {
@@ -61,7 +64,7 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    cursor: "url('/images/paint-brush.png'), pointer"
+    // cursor: "url('/images/paint-brush.png'), pointer"
   };
 
   const movingPartStyle: MotionStyle = {
@@ -85,8 +88,8 @@ const AnimatedBox = ({ imageAfter, imageBefore }: { imageAfter: string, imageBef
   return (
     <motion.div
       style={boxStyle}
-      onClick={() => setHover((prev) => !prev)}
     >
+      <BeforeAfterIndicator isBefore={hover} handleClick={() => setHover((prev) => !prev)}/>
       <motion.div
         ref={moveScope}
         style={movingPartStyle}
