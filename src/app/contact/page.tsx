@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 import soapImage from "@/../../public/images/soap.webp";
 import oneYearImage from "@/../../public/images/1year.webp";
@@ -8,6 +10,7 @@ import eliteImage from "@/../../public/images/elite.webp";
 import ssaImage from "@/../../public/images/ssa-2023.webp";
 import topRatedImage from "@/../../public/images/toprated.webp";
 import { MdArrowOutward } from "react-icons/md";
+import { sendEmail } from "@/features/home/footer/contact/actions";
 
 const images = [
   soapImage,
@@ -19,6 +22,22 @@ const images = [
 ];
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [text, setText] = useState("");
+
+  const handleSubmit = async () => {
+    const response = await sendEmail({
+      from: email,
+      subject: `Email from: ${name} ${phone}`,
+      text: text,
+    });
+    if (!response.ok) {
+      console.log("Something went wrong!");
+    }
+  };
+
   return (
     <div>
       <div className="grid grid-rows-[auto_auto] grid-cols-1 lg:grid-cols-2">
@@ -36,18 +55,26 @@ export default function Contact() {
           <input
             className="bg-inherit h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 placeholder:text-black dark:placeholder:text-white"
             placeholder="Full name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             className="bg-inherit h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14  placeholder:text-black dark:placeholder:text-white"
             placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             className="bg-inherit h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14  placeholder:text-black dark:placeholder:text-white"
             placeholder="Phone (optional)"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <textarea
             className="w-full bg-inherit h-36 resize-none focus:outline-none py-5 px-5 min-md:px-8 placeholder:text-black dark:placeholder:text-white"
             placeholder="How can we help you?"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div>
@@ -77,7 +104,10 @@ export default function Contact() {
             Fill the fields above and click send, we will respond as soon as
             possible via emial or phone call.
           </div>
-          <button className="w-full flex justify-between items-center px-4 py-6 lg:p-8 min-md:px-7 bg-indigo-600 hover:bg-indigo-400 text-white">
+          <button
+            className="w-full flex justify-between items-center px-4 py-6 lg:p-8 min-md:px-7 bg-indigo-600 hover:bg-indigo-400 text-white"
+            onClick={handleSubmit}
+          >
             <div className="text-xl lg:text-2xl">Submit</div>{" "}
             <MdArrowOutward size={34} />
           </button>
