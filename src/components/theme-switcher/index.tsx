@@ -16,8 +16,14 @@ const ThemeSwitcher = ({
   const { darkMode, setDarkMode } = useDarkMode();
 
   const variants = {
-    light: { x: "58%" },
-    dark: { x: "-58%" },
+    medium:{
+      light: { x: "58%" },
+      dark: { x: "-58%" },
+    },
+    small: {
+        light: { x: "65%" },
+        dark: { x: "-65%" },
+    }
   };
 
   const sizeClass = {
@@ -46,7 +52,7 @@ const ThemeSwitcher = ({
         className={`absolute bg-red-500 ${circleSizeClass[size]} rounded-full z-0`}
         initial={darkMode ? "dark" : "light"}
         animate={darkMode ? "dark" : "light"}
-        variants={variants}
+        variants={variants[size]}
         transition={{ duration: 0.2 }}
       />
       <PiMoonLight className="z-10" size={iconSizeClass[size]} />
