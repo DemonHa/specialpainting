@@ -95,7 +95,7 @@ const Testimonials = () => {
         <div className="font-bold text-2xl lg:text-4xl">
           “{testimonial.title}
         </div>
-        <div className="dark:text-white text-black text-lg w-[120ch] font-semibold">
+        <div className="dark:text-white text-black text-lg font-semibold">
           {testimonial.description}”
         </div>
       </div>
