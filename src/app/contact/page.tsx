@@ -11,6 +11,7 @@ import ssaImage from "@/../../public/images/ssa-2023.webp";
 import topRatedImage from "@/../../public/images/toprated.webp";
 import { MdArrowOutward } from "react-icons/md";
 import { sendEmail } from "@/features/home/footer/contact/actions";
+import { useToast } from "@/components/toast";
 
 const images = [
   soapImage,
@@ -27,15 +28,30 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [text, setText] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { addToast } = useToast();
+
   const handleSubmit = async () => {
+    setIsLoading(true);
     const response = await sendEmail({
-      from: email,
-      subject: `Email from: ${name} ${phone}`,
-      text: text,
+      subject: `Website contact form email`,
+      text: `Email from: ${email}\nName: ${name}\nPhone number: ${phone}\nDetails: ${text}\n\nPlease do not repply to this email! The reply is not forwarded to the sender. This email was sent by an automated system.`,
     });
     if (!response.ok) {
-      console.log("Something went wrong!");
+      return addToast({
+        type: "error",
+        description:
+          "Something went wrong while sending the email! Please try again later...",
+      });
     }
+
+    addToast({ type: "info", description: "Email sent successfully!" });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setText("");
+    setIsLoading(false);
   };
 
   return (
@@ -107,6 +123,7 @@ export default function Contact() {
           <button
             className="w-full flex justify-between items-center px-4 py-6 lg:p-8 min-md:px-7 bg-indigo-600 hover:bg-indigo-400 text-white"
             onClick={handleSubmit}
+            disabled={isLoading}
           >
             <div className="text-xl lg:text-2xl">Submit</div>{" "}
             <MdArrowOutward size={34} />

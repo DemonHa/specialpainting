@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { sendEmail } from "./actions";
+import { useToast } from "@/components/toast";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -10,15 +11,30 @@ const Contact = () => {
   const [phone, setPhone] = useState("");
   const [text, setText] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { addToast } = useToast();
+
   const handleSubmit = async () => {
+    setIsLoading(true);
     const response = await sendEmail({
-      from: email,
-      subject: `Email from: ${name} ${phone}`,
-      text: text,
+      subject: `Website contact form email`,
+      text: `Email from: ${email}\nName: ${name}\nPhone number: ${phone}\nDetails: ${text}\n\nPlease do not repply to this email! The reply is not forwarded to the sender. This email was sent by an automated system.`,
     });
     if (!response.ok) {
-      console.log("Something went wrong!");
+      return addToast({
+        type: "error",
+        description:
+          "Something went wrong while sending the email! Please try again later...",
+      });
     }
+
+    addToast({ type: "info", description: "Email sent successfully!" });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setText("");
+    setIsLoading(false);
   };
 
   return (
@@ -67,6 +83,7 @@ const Contact = () => {
         <button
           className="h-[5rem] w-full flex justify-between items-center px-5 min-md:px-7 bg-indigo-600 hover:bg-indigo-400 lg:hidden text-white"
           onClick={handleSubmit}
+          disabled={isLoading}
         >
           <div className="text-xl font-bold">Send</div>{" "}
           <MdArrowOutward size={34} />
@@ -76,6 +93,7 @@ const Contact = () => {
         <button
           className="h-[10rem] min-w-[20vw] bg-indigo-600 text-2xl font-semibold hover:bg-indigo-400 text-white"
           onClick={handleSubmit}
+          disabled={isLoading}
         >
           Send
         </button>
