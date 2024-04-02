@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Statistic = ({
   title,
@@ -16,13 +16,27 @@ const Statistic = ({
   );
 };
 
+const yearExp = (): number => {
+  const currentYear: number = new Date().getFullYear();
+  const difference: number = currentYear - 2022;
+  return difference;
+};
+
 const statisticsData = [
-  { title: "500+", description: "award-winning clients", className: "px-4 py-7" },
-  { title: "$15B+", description: "in client acquisitions", className: "px-4 py-7" },
-  { title: "36", description: "month average engagement", className: "px-4 py-7" },
-  { title: "20+", description: "client IPOs supported", className: "px-4 py-7" },
-  { title: "20+", description: "years of experience", className: "px-4 py-7" },
-  { title: "3K+", description: "world-class engineers", className: "px-4 py-7" },
+  { title: "20+", description: "HomeAdvisor reviews", className: "px-4 py-7" },
+  {
+    title: "6+",
+    description: "HomeAdvisor achievements",
+    className: "px-4 py-7",
+  },
+  {
+    title: `${yearExp()}+`,
+    description: "years of experience",
+    className: "px-4 py-7",
+  },
+  { title: "5", description: "star average ratings", className: "px-4 py-7" },
+  { title: "11+", description: "cities served", className: "px-4 py-7" },
+  { title: "70+", description: "happy clients", className: "px-4 py-7" },
 ];
 
 const Statistics = () => {
@@ -34,7 +48,7 @@ const Statistics = () => {
       {statisticsData.map((stat, index) => (
         <Statistic
           key={index}
-          className={`${stat.className} ${index % 2 !== 0 ? 'md:border-l': ''} border-slate-700`}
+          className={`${stat.className} ${index % 2 !== 0 ? "md:border-l" : ""} border-slate-700`}
           title={stat.title}
           description={stat.description}
         />

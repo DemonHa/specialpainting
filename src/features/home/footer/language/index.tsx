@@ -6,12 +6,16 @@ const Language = () => {
           We speak your Language
         </div>
         <div className="text-3xl xl:text-6xl leading-[40px] xl:leading-[70px] font-bold">
-          Wondering how well we know your industry? Curious which tech stacks we
-          support?{" "}
+          Curious about our expertise in different painting styles? Wondering if
+          we can handle unique challenges in your industry?{" "}
         </div>
         <div className="text-lg lg:text-2xl">
-          Spanning 30+ verticals and 25+ technologies, our team has designed and
-          implemented innovative solutions to suit even the most unique needs
+          Spanning a wide range of projects across 30+ sectors and adept at
+          working with various techniques, our experienced team has successfully
+          delivered innovative painting solutions tailored to meet diverse
+          requirements. Whether it is residential or commercial, our proficiency
+          extends to handling a variety of painting styles and accommodating
+          specific preferences to bring your vision to life.
         </div>
       </div>
     </div>

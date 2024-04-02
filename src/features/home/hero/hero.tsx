@@ -6,38 +6,46 @@ import { MdArrowOutward } from "react-icons/md";
 import AnimatedSlider from "./animated-slider";
 import TextAnimationWrapper from "./text-animation";
 
+const yearExp = (): number => {
+  const currentYear: number = new Date().getFullYear();
+  const difference: number = currentYear - 2022;
+  return difference;
+};
+
 const templates = [
   {
-    title: "Built to scale",
+    title: "Trusted and Experienced",
     description:
-      "Vention developers partner with innovative companies from startups to Fortune 500s, lending the AI engineering expertise to propel them to new heights and the edge to outpace the competition.",
+      "With " +
+      yearExp() +
+      "+ years of HomeAdvisor-approved experience, Special Painting and Contracting LLC is a top-rated Elite Service Professional. Our licenses, awards, and satisfied reviews attest to our quality work and customer satisfaction, whether it's residential or commercial projects.",
     button: "Get an estimate",
     color: "dark:bg-lightRed bg-red-500",
     hex: "#BE3144",
     textColor: "text-black dark:text-white",
   },
   {
-    title: "AI innovation",
+    title: "Professionalism and Expertise",
     description:
-      "As pioneers in AI engineering, we view it as more than a shiny tool: it's a pillar of the new business normal. Those companies that embrace and leverage AI will set the standard and lead in their category. In our new State of AI report, we look at funding, investment, and valuation trends across the AI market.",
+      "At Special Painting and Contracting LLC, professionalism and expertise define our approach. Our team specializes in residential, commercial painting, and power washing. Our verified licenses and Seal of Approval ensure top-notch service and attention to detail.",
     button: "Read The Report",
     color: "dark:bg-jeans bg-teal-600",
     hex: "#124076",
     textColor: "text-black dark:text-white",
   },
   {
-    title: "Expert software development",
+    title: "Customer-Centric Approach",
     description:
-      "Get it done right — the first time. Our proven software expertise and engagement flexibility mean you don't have to worry about timelines, processes, or outcomes. Proficient in web, mobile, cloud, and advanced tech like AI and VR, we empower you to innovate and grow your business at the scale and speed of future trends.",
+      "Special Painting and Contracting LLC prioritizes customer satisfaction. With 20+ homeowner reviews and 5-star ratings, our customer-centric approach and quality service speak for themselves. Experience excellence with us.",
     button: "Explore Services",
     color: "dark:bg-customOrange bg-orange-500",
     hex: "#F05941",
     textColor: "text-black dark:text-white",
   },
   {
-    title: "Exceptional customer service",
+    title: "Positive Feedback",
     description:
-      "At Vention, unparalleled customer care isn't just a promise — it's our mission. We blend personalized experience, unwavering attention to detail, and a genuine passion for your business, ensuring that every aspect of our collaboration is tailored to your success.",
+      "Special Painting and Contracting LLC offers comprehensive painting and contracting services. From exterior paint to power washing, we deliver quality work across Seattle, Bellevue, and more. Our 100% recommendations and positive feedback highlight our commitment to quality and fair pricing.",
     button: "Schedule a call",
     color: "dark:bg-darkRed bg-rose-500",
     hex: "#872341",

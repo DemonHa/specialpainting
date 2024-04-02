@@ -1,5 +1,6 @@
 import React from "react";
 import ThemeSwitcher from "../theme-switcher";
+import Image from "next/image";
 
 const GeneralFooter = () => {
   return (
@@ -23,9 +24,23 @@ const GeneralFooter = () => {
           <ThemeSwitcher />
           <div className="font-semibold">Dark mode</div>
         </div>
-        <div className="text-7xl text-bold max-lg:ml-auto max-lg:mr-auto max-lg:my-10">
+        {/* <div className="text-7xl text-bold max-lg:ml-auto max-lg:mr-auto max-lg:my-10">
           Vention
-        </div>
+        </div> */}
+        <Image
+          src="/images/logo-black.png"
+          className="hidden dark:block"
+          alt="Dark Logo"
+          width={140}
+          height={140}
+        />
+        <Image
+          src="/images/logo-white.png"
+          className="block dark:hidden"
+          alt="Dark Logo"
+          width={140}
+          height={140}
+        />
       </div>
       <div className="flex flex-col justify-around min-h-[17rem] items-center min-w-[40vw] ">
         <div className="flex justify-around items-center w-full">
@@ -36,9 +51,9 @@ const GeneralFooter = () => {
             <div>Youtube</div>
           </div>
           <div className="flex flex-col space-y-5 w-[25ch] justify-start ">
-            <div>US: +1 (718) 374-5043</div>
-            <div>575 Lexington Avenue, 14th Floor</div>
-            <div>New York, NY 10022</div>
+            <div>US: 206-910-5493</div>
+            <div>4203 216th St SW</div>
+            <div>Mountlake Terrace, WA 98043</div>
           </div>
         </div>
         <div className="max-lg:hidden">

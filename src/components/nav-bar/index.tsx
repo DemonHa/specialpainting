@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { smallMenuData, bigMenuData } from "./utils/menu-data";
 import useSmallScreenMenuHeight from "./utils/use-small-screen-menu-height";
 import ThemeSwitcher from "../theme-switcher";
-
+import Image from "next/image";
 
 const menuTitleStyles =
   "h-[6rem] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
@@ -36,9 +36,22 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 bg-inherit z-20">
       <div className="flex justify-between w-full border-b border-gray-300 dark:border-slate-700 divide-x divide-gray-300 dark:divide-slate-700 h-[4rem]">
-        <div className="flex-1 flex items-center">
+        <div className="flex-1 flex items-center px-5">
           <Link href="/">
-            <div className="p-5 text-xl">VENTION</div>
+            <Image
+              src="/images/logo-black.png"
+              className="block dark:hidden"
+              alt="Dark Logo"
+              width={80}
+              height={80}
+            />
+            <Image
+              src="/images/logo-white.png"
+              className="hidden dark:block"
+              alt="Dark Logo"
+              width={80}
+              height={80}
+            />
           </Link>
         </div>
         <div className="flex xl:hidden border-l border-gray-300 dark:border-slate-700 min-w-[50px]:">
