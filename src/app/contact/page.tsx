@@ -43,11 +43,11 @@ export default function Contact() {
       <div className="grid grid-rows-[auto_auto] grid-cols-1 lg:grid-cols-2">
         <div className="flex flex-col justify-between gap-10 lg:border-r lg:border-b border-gray-300 dark:border-slate-700">
           <div className="px-4 lg:px-6 pt-10 pb-28 lg:pb-0 text-4xl xl:text-5xl font-medium w-full md:w-[80%] lg:w-full">
-            With us, you get the dedication of an in-house team with the proven
-            expertise of a tech industry leader.
+            Experience the dedication of an in-house team combined with the
+            proven expertise of a painting industry leader when you choose us.
           </div>
           <div className="px-6 pb-6 text-md hidden lg:flex">
-            Our valued clients include:
+            Our valued HomeAdvisor achivements:
           </div>
         </div>
         <div className="flex flex-col divide-y divide-gray-300 dark:divide-slate-700 border-0 lg:border-b border-gray-300 dark:border-slate-700">
@@ -121,7 +121,7 @@ export default function Contact() {
               Prefer email? You can also reach us at:
             </div>
             <div className="text-2xl lg:text-4xl underline">
-              hello@ventionteams.com
+              special.painting.website@gmail.com
             </div>
           </div>
           <div className="flex flex-col gap-4">

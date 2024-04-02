@@ -5,9 +5,11 @@ export const Header = () => {
         <div className="text-3xl xl:text-5xl font-bold">
           Trusted by the best
         </div>
-        <div className="text-lg xl:text-2xl">
-          Companies ranging from early-stage startups to Fortune 500 enterprises
-          partner with us to develop game-changing growth solutions.
+        <div className="text-lg xl:text-2xl pr-10 max-w-[1600px]">
+          From budding businesses to established enterprises, our painting
+          company is the preferred choice for transformative painting and
+          contracting solutions. Join hands with us to elevate your space and
+          experience exceptional results.
         </div>
       </div>
     </div>
