@@ -1,5 +1,6 @@
 "use client";
 
+import { ToastProvider } from "@/components/toast";
 import { DarkModeProvider } from "@/features/darkmode";
 
 export function Providers({
@@ -7,5 +8,9 @@ export function Providers({
 }: {
   children?: React.ReactNode | React.ReactNode[];
 }) {
-  return <DarkModeProvider>{children}</DarkModeProvider>;
+  return (
+    <DarkModeProvider>
+      <ToastProvider>{children}</ToastProvider>
+    </DarkModeProvider>
+  );
 }
