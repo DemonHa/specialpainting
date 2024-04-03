@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import AnimatedSlider from "./animated-slider";
 import TextAnimationWrapper from "./text-animation";
+import Link from "next/link";
 
 const yearExp = (): number => {
   const currentYear: number = new Date().getFullYear();
@@ -19,27 +20,30 @@ const templates = [
       "With " +
       yearExp() +
       "+ years of HomeAdvisor-approved experience, Special Painting and Contracting LLC is a top-rated Elite Service Professional. Our licenses, awards, and satisfied reviews attest to our quality work and customer satisfaction, whether it's residential or commercial projects.",
-    button: "Get an estimate",
-    color: "dark:bg-lightRed bg-red-500",
-    hex: "#BE3144",
+    button: "Explore Services",
+    link: "/what-we-do",
+    color: "bg-orange-500",
+    hex: "#f97315",
     textColor: "text-black dark:text-white",
   },
   {
     title: "Professionalism and Expertise",
     description:
       "At Special Painting and Contracting LLC, professionalism and expertise define our approach. Our team specializes in residential, commercial painting, and power washing. Our verified licenses and Seal of Approval ensure top-notch service and attention to detail.",
-    button: "Read The Report",
-    color: "dark:bg-jeans bg-teal-600",
-    hex: "#124076",
+    button: "Get in touch",
+    link: "/contact",
+    color: "bg-green-400",
+    hex: "#49de80",
     textColor: "text-black dark:text-white",
   },
   {
     title: "Customer-Centric Approach",
     description:
       "Special Painting and Contracting LLC prioritizes customer satisfaction. With 20+ homeowner reviews and 5-star ratings, our customer-centric approach and quality service speak for themselves. Experience excellence with us.",
-    button: "Explore Services",
-    color: "dark:bg-customOrange bg-orange-500",
-    hex: "#F05941",
+    button: "Our work",
+    link: "/what-we-do",
+    color: "bg-fuchsia-400",
+    hex: "#e979f9",
     textColor: "text-black dark:text-white",
   },
   {
@@ -47,8 +51,9 @@ const templates = [
     description:
       "Special Painting and Contracting LLC offers comprehensive painting and contracting services. From exterior paint to power washing, we deliver quality work across Seattle, Bellevue, and more. Our 100% recommendations and positive feedback highlight our commitment to quality and fair pricing.",
     button: "Schedule a call",
-    color: "dark:bg-darkRed bg-rose-500",
-    hex: "#872341",
+    link: "/contact",
+    color: "bg-indigo-600 text-white",
+    hex: "#5046e5",
     textColor: "text-black dark:text-white",
   },
 ];
@@ -103,7 +108,8 @@ const Hero = () => {
                 className="text-sm xl:text-lg"
                 text={template.description}
               />
-              <button
+              <Link
+                href={template.link}
                 className={`w-full ${template.color} ${template.textColor} mt-4 xl:mt-8 px-3 xl:px-6 py-2 xl:py-4 flex justify-between items-center`}
               >
                 <TextAnimationWrapper
@@ -111,7 +117,7 @@ const Hero = () => {
                   text={template.button}
                 />
                 <MdArrowOutward size={30} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -136,12 +142,13 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <button
+      <Link
+        href={template.link}
         className={`lg:hidden w-full ${template.color} ${template.textColor} px-3 py-6 flex justify-between items-center`}
       >
         <TextAnimationWrapper className="text-2xl" text={template.button} />
         <MdArrowOutward size={30} />
-      </button>
+      </Link>
     </>
   );
 };

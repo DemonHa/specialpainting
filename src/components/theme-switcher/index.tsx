@@ -16,14 +16,14 @@ const ThemeSwitcher = ({
   const { darkMode, setDarkMode } = useDarkMode();
 
   const variants = {
-    medium:{
+    medium: {
       light: { x: "58%" },
       dark: { x: "-58%" },
     },
     small: {
-        light: { x: "65%" },
-        dark: { x: "-65%" },
-    }
+      light: { x: "65%" },
+      dark: { x: "-65%" },
+    },
   };
 
   const sizeClass = {

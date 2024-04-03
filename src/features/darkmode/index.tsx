@@ -7,7 +7,6 @@ import {
   useState,
 } from "react";
 
-
 const DarkModeContext = createContext({
   darkMode: false,
   setDarkMode: (_: boolean) => {},
@@ -18,7 +17,6 @@ const DarkModeProvider = ({
 }: {
   children?: React.ReactNode | React.ReactNode[];
 }) => {
-
   const key = "darkMode";
   const isBrowser = typeof window !== "undefined";
 
@@ -41,7 +39,6 @@ const DarkModeProvider = ({
     handleDarkMode(darkMode);
   }, [darkMode, handleDarkMode]);
 
-
   return (
     <DarkModeContext.Provider value={{ darkMode, setDarkMode: handleDarkMode }}>
       {children}
@@ -54,7 +51,6 @@ const useDarkMode = () => {
   return useContext(DarkModeContext);
 };
 
-
 const FloatingDarkMode = () => {
   return (
     <div className="hidden xl:flex fixed z-[9] bottom-8 left-4">
@@ -62,6 +58,5 @@ const FloatingDarkMode = () => {
     </div>
   );
 };
-
 
 export { DarkModeProvider, useDarkMode };

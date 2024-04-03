@@ -5,8 +5,8 @@ export const Header = () => {
         <div className="text-6xl xl:text-7xl font-bold">Our work</div>
       </div>
 
-      <div className="flex w-[65vw] pt-56 xl:pt-96 pb-16 pl-10 xl:pl-20">
-        <div className="max-w-[1000px] text-2xl lg:text-3xl xl:line-clamp-3">
+      <div className="flex md:w-[65vw] h-auto pt-20 lg:pt-0 lg:h-[500px] pb-16 px-10 xl:pl-20 items-end">
+        <div className="max-w-[1000px] text-2xl lg:text-3xl">
           We work closely with homeowners and businesses, offering our expertise
           in painting both exterior and interior spaces. As a trusted partner,
           we collaborate with our clients throughout every stage of their

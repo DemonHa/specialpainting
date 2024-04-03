@@ -5,15 +5,13 @@ import { TbPaintOff } from "react-icons/tb";
 import { TbPaintFilled } from "react-icons/tb";
 import { motion } from "framer-motion";
 
-
 const BeforeAfterIndicator = ({
   isBefore,
-  handleClick
+  handleClick,
 }: {
   isBefore: boolean;
   handleClick: () => void;
 }) => {
-
   const variants = {
     before: { x: "58%" },
     after: { x: "-58%" },
@@ -31,8 +29,8 @@ const BeforeAfterIndicator = ({
         variants={variants}
         transition={{ duration: 0.2 }}
       />
-      <TbPaintOff className="z-10" size={'1.7rem'} />
-      <TbPaintFilled className="z-10" size={'1.7rem'} />
+      <TbPaintOff className="z-10" size={"1.7rem"} />
+      <TbPaintFilled className="z-10" size={"1.7rem"} />
     </div>
   );
 };

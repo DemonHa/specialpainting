@@ -45,10 +45,30 @@ const GeneralFooter = () => {
       <div className="flex flex-col justify-around min-h-[17rem] items-center min-w-[40vw] ">
         <div className="flex justify-around items-center w-full">
           <div className="flex flex-col space-y-3 items-start">
-            <div>LinkedIn</div>
-            <div>Instagram</div>
-            <div>X / Twitter</div>
-            <div>Youtube</div>
+            <a
+              href="https://instagram.com/specialpainting.llc?igshid=YmMyMTA2M2Y="
+              target="_blank"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/specialpaintingLLC?mibextid=ZbWKwL"
+              target="_blank"
+            >
+              Facebook
+            </a>
+            <a
+              href="https://wa.me/0012069105493?text=Hello%2C%20I%20am%20interested%20in%20working%20with%20you!"
+              target="_blank"
+            >
+              Whatsapp
+            </a>
+            <a
+              href="https://www.homeadvisor.com/rated.SpecialPaintingand.122036015.html"
+              target="_blank"
+            >
+              Home Advisor
+            </a>
           </div>
           <div className="flex flex-col space-y-5 w-[25ch] justify-start ">
             <div>US: 206-910-5493</div>
