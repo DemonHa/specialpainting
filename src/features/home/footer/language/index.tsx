@@ -1,11 +1,11 @@
 const Language = () => {
   return (
-    <div className="px-6 lg:px-24 pt-16 lg:pt-44 pb-16 flex justify-end">
-      <div className="space-y-12 lg:max-w-[45vw]">
+    <div className="px-6 lg:px-24 pt-16 lg:pt-20 pb-16 flex justify-end">
+      <div className="space-y-6 lg:max-w-[45vw]">
         <div className="text-2xl lg:text-3xl text-orange-500">
           We speak your Language
         </div>
-        <div className="text-3xl xl:text-6xl leading-[40px] xl:leading-[70px] font-bold">
+        <div className="text-3xl xl:text-5xl leading-[40px] font-bold">
           Curious about our expertise in different painting styles? Wondering if
           we can handle unique challenges in your industry?{" "}
         </div>
