@@ -14,7 +14,7 @@ export const bigMenuData = [
     link: "contact",
     filled: true,
   },
-]
+];
 
 export const smallMenuData = [
   {
@@ -37,4 +37,4 @@ export const smallMenuData = [
     link: "/",
     isTitle: false,
   },
-]
+];

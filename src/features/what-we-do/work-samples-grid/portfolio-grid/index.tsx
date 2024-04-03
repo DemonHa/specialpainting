@@ -1,5 +1,5 @@
-import React from 'react';
-import PortfolioCard from './portfolio-card.tsx';
+import React from "react";
+import PortfolioCard from "./portfolio-card.tsx";
 
 export type Portfolio = {
   title: string;
@@ -8,21 +8,30 @@ export type Portfolio = {
   innerFilter: string;
   imgBefore: string;
   imgAfter: string;
-}
+};
 
 type PropTypes = {
   portofolioData: Portfolio[];
   gridView: boolean;
-}
+};
 
 const PortfoilioGrid = ({ portofolioData, gridView }: PropTypes) => {
   return (
-    <div className={`grid divide-x divide-y7 dark:divide-slate-700 divide-gray-300 ${gridView ? 'grid-cols-2' : 'grid-cols-1'} max-md:grid-cols-1`}>
+    <div
+      className={`grid divide-x divide-y7 dark:divide-slate-700 divide-gray-300 ${gridView ? "grid-cols-2" : "grid-cols-1"} max-md:grid-cols-1`}
+    >
       {portofolioData.map((portfolio, index) => {
-        return <PortfolioCard key={index} portfolio={portfolio} gridView={gridView} index={index}/>
+        return (
+          <PortfolioCard
+            key={index}
+            portfolio={portfolio}
+            gridView={gridView}
+            index={index}
+          />
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default PortfoilioGrid
+export default PortfoilioGrid;
