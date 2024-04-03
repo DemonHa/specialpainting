@@ -22,8 +22,8 @@ const templates = [
       "+ years of HomeAdvisor-approved experience, Special Painting and Contracting LLC is a top-rated Elite Service Professional. Our licenses, awards, and satisfied reviews attest to our quality work and customer satisfaction, whether it's residential or commercial projects.",
     button: "Explore Services",
     link: "/what-we-do",
-    color: "dark:bg-lightRed bg-red-500",
-    hex: "#BE3144",
+    color: "bg-orange-500",
+    hex: "#f97315",
     textColor: "text-black dark:text-white",
   },
   {
@@ -32,8 +32,8 @@ const templates = [
       "At Special Painting and Contracting LLC, professionalism and expertise define our approach. Our team specializes in residential, commercial painting, and power washing. Our verified licenses and Seal of Approval ensure top-notch service and attention to detail.",
     button: "Get in touch",
     link: "/contact",
-    color: "dark:bg-jeans bg-teal-600",
-    hex: "#124076",
+    color: "bg-green-400",
+    hex: "#49de80",
     textColor: "text-black dark:text-white",
   },
   {
@@ -42,8 +42,8 @@ const templates = [
       "Special Painting and Contracting LLC prioritizes customer satisfaction. With 20+ homeowner reviews and 5-star ratings, our customer-centric approach and quality service speak for themselves. Experience excellence with us.",
     button: "Our work",
     link: "/what-we-do",
-    color: "dark:bg-customOrange bg-orange-500",
-    hex: "#F05941",
+    color: "bg-fuchsia-400",
+    hex: "#e979f9",
     textColor: "text-black dark:text-white",
   },
   {
@@ -52,8 +52,8 @@ const templates = [
       "Special Painting and Contracting LLC offers comprehensive painting and contracting services. From exterior paint to power washing, we deliver quality work across Seattle, Bellevue, and more. Our 100% recommendations and positive feedback highlight our commitment to quality and fair pricing.",
     button: "Schedule a call",
     link: "/contact",
-    color: "dark:bg-darkRed bg-rose-500",
-    hex: "#872341",
+    color: "bg-indigo-600 text-white",
+    hex: "#5046e5",
     textColor: "text-black dark:text-white",
   },
 ];
