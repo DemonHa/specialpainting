@@ -14,7 +14,7 @@ import Image from "next/image";
 const menuTitleStyles =
   "h-[6rem] flex justify-start items-end py-3 px-7 text-lg border-b border-gray-300 dark:border-slate-700";
 const menuLinkStyles =
-  "h-[4rem] flex justify-start items-end py-3 px-7 text-xl font-semibold border-b border-gray-300 dark:border-slate-700 text-black dark:text-orange-300 cursor-pointer";
+  "h-[4rem] flex justify-between items-end py-3 px-7 text-xl font-semibold border-b border-gray-300 dark:border-slate-700 text-black dark:text-orange-300 cursor-pointer";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -108,7 +108,10 @@ const Navbar = () => {
                         }}
                         href={item.link}
                       >
-                        <div className={menuLinkStyles}>{item.label}</div>
+                        <div className={menuLinkStyles}>
+                         <div>{item.label}</div>
+                         <div><MdArrowOutward size={34} /></div>
+                        </div>
                       </Link>
                     );
                   }

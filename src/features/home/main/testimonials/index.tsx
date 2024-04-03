@@ -7,14 +7,16 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 const Button = ({
   children,
   onClick,
+  lastOne,
 }: {
   children?: React.ReactNode | React.ReactNode[];
   onClick?: () => void;
+  lastOne: boolean;
 }) => {
   return (
     <div
       onClick={onClick}
-      className="w-10 h-10 rounded-full bg-black flex justify-center items-center cursor-pointer"
+      className={`w-10 h-10 rounded-full ${lastOne ? "bg-inherit border-2 border-black dark:border-white" : "bg-black dark:bg-white"}  flex justify-center items-center cursor-pointer`}
     >
       {children}
     </div>
@@ -76,18 +78,24 @@ const Testimonials = () => {
         </div>
         <div className="flex gap-3">
           <Button
+            lastOne={page === 0}
             onClick={() => {
               setPage((prev) => Math.max(prev - 1, 0));
             }}
           >
-            <BsArrowLeft className="text-white" />
+            <BsArrowLeft
+              className={`${page !== 0 ? "text-white dark:text-black" : "text-black dark:text-white"}`}
+            />
           </Button>
           <Button
+            lastOne={page === testimonials.length - 1}
             onClick={() => {
               setPage((prev) => Math.min(prev + 1, testimonials.length - 1));
             }}
           >
-            <BsArrowRight className="text-white" />
+            <BsArrowRight
+              className={`${page !== testimonials.length - 1 ? "text-white dark:text-black" : "text-black dark:text-white"}`}
+            />
           </Button>
         </div>
       </div>
