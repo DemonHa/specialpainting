@@ -132,19 +132,13 @@ export default function Contact() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-1">
         <div className="hidden md:flex"></div>
-        <div className="flex flex-col gap-12 px-8 lg:px-10 py-16 lg:py-24">
+        <div className="flex flex-col gap-12 px-8 lg:px-10 py-16 lg:py-44">
           <div className="flex flex-col gap-4">
             <div className="text-md lg:text-lg">
               Prefer email? You can also reach us at:
             </div>
             <div className="text-2xl lg:text-4xl underline">
-              special.painting.website@gmail.com
-            </div>
-          </div>
-          <div className="flex flex-col gap-4">
-            <div className="text-md lg:text-lg">Want to join our team?</div>
-            <div className="text-2xl lg:text-4xl underline">
-              careers@specialpainting.com
+              info@specialpaintingllc.com
             </div>
           </div>
         </div>
