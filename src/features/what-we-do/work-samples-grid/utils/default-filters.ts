@@ -1,5 +1,5 @@
 const defaultFilters = {
-  comercial: {
+  commercial: {
     interior: false,
     exterior: false,
   },

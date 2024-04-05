@@ -27,7 +27,7 @@ const FilterTabs = ({
         <ExpandableMenu
           filters={filters}
           setFilters={setFilters}
-          type="comercial"
+          type="commercial"
           screenSize="big"
         />
         <ExpandableMenu
