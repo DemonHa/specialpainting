@@ -33,6 +33,14 @@ export default function Contact() {
   const { addToast } = useToast();
 
   const handleSubmit = async () => {
+    if ((name !== "" && email !== "" && text !== "") == false) {
+      addToast({
+        type: "error",
+        description: "Please fill all the fileds that are required!",
+      });
+      return;
+    }
+
     setIsLoading(true);
     const response = await sendEmail({
       subject: `Website contact form email`,
@@ -70,13 +78,13 @@ export default function Contact() {
           <div className="text-xl px-4 lg:px-6 py-12">Get in touch</div>
           <input
             className="bg-inherit h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 placeholder:text-black dark:placeholder:text-white"
-            placeholder="Full name"
+            placeholder="Full name*"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             className="bg-inherit h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14  placeholder:text-black dark:placeholder:text-white"
-            placeholder="Email"
+            placeholder="Email*"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -88,7 +96,7 @@ export default function Contact() {
           />
           <textarea
             className="w-full bg-inherit h-36 resize-none focus:outline-none py-5 px-5 min-md:px-8 placeholder:text-black dark:placeholder:text-white"
-            placeholder="How can we help you?"
+            placeholder="How can we help you?*"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />

@@ -18,7 +18,7 @@ export const portfolioGridData = [
   {
     title: "Warehouse Painting",
     subTitle: "Safe from wet and damp",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "exterior",
     imgBefore: "warehouse-outdoor.webp",
     imgAfter: "warehouse-outdoor-after.webp",
@@ -26,7 +26,7 @@ export const portfolioGridData = [
   {
     title: "Coffee Shop Painting",
     subTitle: "New look of the coffee shop",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "interior",
     imgBefore: "coffeeshop-indoor.webp",
     imgAfter: "coffeeshop-indoor-after.webp",
@@ -34,7 +34,7 @@ export const portfolioGridData = [
   {
     title: "Office Makeover",
     subTitle: "From traditional to modern workspace",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "interior",
     imgBefore: "office-before.webp",
     imgAfter: "office-after.webp",
@@ -58,7 +58,7 @@ export const portfolioGridData = [
   {
     title: "Storefront Refresh",
     subTitle: "Inviting and modern front",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "exterior",
     imgBefore: "storefront-before.webp",
     imgAfter: "storefront-after.webp",
@@ -74,7 +74,7 @@ export const portfolioGridData = [
   {
     title: "Restaurant Reimagining",
     subTitle: "Cozy and appealing dining area",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "interior",
     imgBefore: "restaurant-before.webp",
     imgAfter: "restaurant-after.webp",
@@ -82,7 +82,7 @@ export const portfolioGridData = [
   {
     title: "School Exterior Enhancement",
     subTitle: "Bright and welcoming appearance",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "exterior",
     imgBefore: "school-before.webp",
     imgAfter: "school-after.webp",
@@ -90,7 +90,7 @@ export const portfolioGridData = [
   {
     title: "Library Interior Modernization",
     subTitle: "Quiet and contemporary reading environment",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "interior",
     imgBefore: "library-before.webp",
     imgAfter: "library-after.webp",
@@ -106,7 +106,7 @@ export const portfolioGridData = [
   {
     title: "Gym Interior Upgrade",
     subTitle: "Energetic and motivating space",
-    outerFilter: "comercial",
+    outerFilter: "commercial",
     innerFilter: "interior",
     imgBefore: "gym-before.webp",
     imgAfter: "gym-after.webp",

@@ -65,7 +65,7 @@ const CustomSelect = ({ filters, setFilters, totalCount }: PropTypes) => {
                 className="border-t border-b dark:border-slate-700 border-gray-300"
               />
               <ExpandableMenu
-                type="comercial"
+                type="commercial"
                 filters={filters}
                 setFilters={setFilters}
                 screenSize="small"

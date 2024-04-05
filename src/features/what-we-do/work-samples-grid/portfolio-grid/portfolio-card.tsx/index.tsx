@@ -1,6 +1,6 @@
 import React from "react";
 import { Portfolio } from "..";
-import AnimatedBox from "./AnimatedBox";
+import AnimatedBox from "./animatedBox";
 
 const PortfolioCard = ({
   portfolio,

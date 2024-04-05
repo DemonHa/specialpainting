@@ -92,8 +92,8 @@ const AnimatedBox = ({
   };
 
   const boxStyle: MotionStyle = {
-    height: "inherit",
-    width: "100%",
+    height: "width > 1024 ? '480px' : '240px'",
+    width: width > 1024 ? "695.6px" : "414.4px",
     maxWidth: "45rem",
     position: "relative",
     outline: 0,
@@ -105,7 +105,6 @@ const AnimatedBox = ({
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    // cursor: "url('/images/paint-brush.png'), pointer"
   };
 
   const movingPartStyle: MotionStyle = {

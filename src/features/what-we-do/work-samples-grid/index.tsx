@@ -13,7 +13,7 @@ export type FilterTypes = {
 
 export type FilterSchemaTypes = {
   residential: FilterTypes;
-  comercial: FilterTypes;
+  commercial: FilterTypes;
   isClean: boolean;
   [key: string]: any;
 };

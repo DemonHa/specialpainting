@@ -5,7 +5,7 @@ import { IoMdCheckmark } from "react-icons/io";
 import defaultFilters from "../../utils/default-filters";
 import { motion } from "framer-motion";
 
-type OuterFilterTypes = "comercial" | "residential";
+type OuterFilterTypes = "commercial" | "residential";
 
 type InnerFilterTypes = "interior" | "exterior";
 
@@ -27,10 +27,10 @@ const ExpandableMenu = ({
   const [hovered, setHovered] = useState(false);
 
   const pullValuesFromObject = (obj: FilterSchemaTypes) => {
-    const comercialValues = Object.values(obj.comercial);
+    const commercialValues = Object.values(obj.commercial);
     const residentialValues = Object.values(obj.residential);
 
-    return [...comercialValues, ...residentialValues];
+    return [...commercialValues, ...residentialValues];
   };
 
   const isFiltersDefault = (

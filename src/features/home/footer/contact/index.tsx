@@ -16,6 +16,14 @@ const Contact = () => {
   const { addToast } = useToast();
 
   const handleSubmit = async () => {
+    if ((name !== "" && email !== "" && text !== "") == false) {
+      addToast({
+        type: "error",
+        description: "Please fill all the fileds that are required!",
+      });
+      return;
+    }
+
     setIsLoading(true);
     const response = await sendEmail({
       subject: `Website contact form email`,
@@ -47,13 +55,13 @@ const Contact = () => {
           <div className="grid grid-cols-2 max-md:grid-cols-1 border-y border-gray-300 dark:border-slate-700">
             <input
               className="bg-inherit border-b border-r max-md:border-r-0 border-gray-300 dark:border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14 placeholder:text-black dark:placeholder:text-white"
-              placeholder="Full name"
+              placeholder="Full name*"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
               className="bg-inherit border-b border-gray-300 dark:border-slate-700 h-16 focus:outline-none min-md:px-8 px-5 max-md:h-14  placeholder:text-black dark:placeholder:text-white"
-              placeholder="Email"
+              placeholder="Email*"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -67,7 +75,7 @@ const Contact = () => {
           <div className="flex flex-col justify-end">
             <textarea
               className="w-full bg-inherit border-b border-gray-300 dark:border-slate-700 h-48 resize-none focus:outline-none py-5 px-5 min-md:px-8 max-lg:h-20  placeholder:text-black dark:placeholder:text-white"
-              placeholder="How can we help you?"
+              placeholder="How can we help you?*"
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
