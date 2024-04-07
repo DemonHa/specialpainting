@@ -27,7 +27,7 @@ const AnimatedBox = ({
           rotateScope.current,
           {
             background:
-              "radial-gradient(circle at center, transparent 100%, rgba(244, 67, 54, 1) 70%)",
+              "radial-gradient(circle at center, transparent 100%, rgba(244, 67, 54, 1) 65%)",
           },
           { duration: 2.5, ease: "easeInOut" },
         );
@@ -36,7 +36,7 @@ const AnimatedBox = ({
           rotateScope.current,
           {
             background:
-              "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)",
+              "radial-gradient(circle at center, transparent 30%, rgba(244, 67, 54, 1) 65%)",
           },
           { duration: 1.5, ease: "easeInOut" },
         );
@@ -80,10 +80,11 @@ const AnimatedBox = ({
     bottom: "-5%",
     height: width > 1024 ? "200%" : width < 768 ? "200%" : "170%",
     width: width > 1024 ? "160%" : width < 768 ? "145%" : "180%",
+    aspectRatio: "16/9",
     border: "5rem solid rgba(244, 67, 54, 1)",
-    borderRadius: width > 1024 ? "35%" : "48%",
+    borderRadius: width > 800 ? "35%" : "47%",
     background:
-      "radial-gradient(circle at center, transparent 35%, rgba(244, 67, 54, 1) 70%)",
+      "radial-gradient(circle at center, transparent 30%, rgba(244, 67, 54, 1) 65%)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     display: "flex",
@@ -92,9 +93,10 @@ const AnimatedBox = ({
   };
 
   const boxStyle: MotionStyle = {
-    height: "width > 1024 ? '480px' : '240px'",
-    width: width > 1024 ? "695.6px" : "414.4px",
-    maxWidth: "45rem",
+    width: "100%",
+    aspectRatio: "16/9",
+    maxWidth: "38rem",
+    maxHeight: width < 1200 ? "20rem" : "25rem",
     position: "relative",
     outline: 0,
     overflow: "hidden",
@@ -112,6 +114,7 @@ const AnimatedBox = ({
     position: "absolute",
     height: "200%",
     width: "200%",
+    aspectRatio: "16/9",
     bottom: "-50%",
     left: "-50%",
     display: "flex",
