@@ -5,8 +5,14 @@ import Navbar from "@/components/nav-bar";
 import GeneralFooter from "@/components/general-footer";
 import { Providers } from "./providers";
 import { Toast } from "@/components/toast";
+import { Raleway } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const RalewayFont = Raleway({
+  weight: ["400", "700", "900"],
+  subsets: ["latin"], // Define subsets if necessary
+});
 
 export const metadata: Metadata = {
   title: "Special Painting",
@@ -21,12 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="p-0 m-0 h-full">
       <body className="bg-background-white dark:bg-background-dark text-black dark:text-white overflow-x-hidden p-0 m-0 h-full">
-        <Providers>
-          <Navbar />
-          {children}
-          <GeneralFooter />
-          <Toast />
-        </Providers>
+        <main className={RalewayFont.className}>
+          <Providers>
+            <Navbar />
+            {children}
+            <GeneralFooter />
+            <Toast />
+          </Providers>
+        </main>
       </body>
     </html>
   );

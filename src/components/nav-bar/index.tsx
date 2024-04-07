@@ -34,7 +34,7 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <div className="sticky top-0 bg-inherit z-20">
+    <div className="sticky top-0 bg-background-white dark:bg-background-dark z-20">
       <div className="flex justify-between w-full border-b border-gray-300 dark:border-slate-700 divide-x divide-gray-300 dark:divide-slate-700 h-[4rem]">
         <div className="flex-1 flex items-center px-5">
           <Link href="/">
