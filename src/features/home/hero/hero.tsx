@@ -6,6 +6,7 @@ import { MdArrowOutward } from "react-icons/md";
 import AnimatedSlider from "./animated-slider";
 import TextAnimationWrapper from "./text-animation";
 import Link from "next/link";
+import Image from "next/image";
 
 const yearExp = (): number => {
   const currentYear: number = new Date().getFullYear();
@@ -124,7 +125,7 @@ const Hero = () => {
         <div className="relative">
           <div className="flex-1">
             <img
-              src="https://www.paintzen.com/wp-content/uploads/2019/10/paintzen-black-exterior-rowhouse-1.jpg"
+              src={"/images/portfolio/hero_section.jpeg"}
               style={{
                 clipPath:
                   "polygon(50% 0%, 100% 0, 100% 62%, 67% 62%, 34% 100%, 16% 100%, 0 100%, 0% 43%, 0 0)",
