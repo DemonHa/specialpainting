@@ -27,7 +27,7 @@ const AnimatedBox = ({
           rotateScope.current,
           {
             background:
-              "radial-gradient(circle at center, transparent 100%, rgba(244, 67, 54, 1) 65%)",
+              "radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(244, 67, 54, 0) 0%)",
           },
           { duration: 2.5, ease: "easeInOut" },
         );
@@ -36,7 +36,7 @@ const AnimatedBox = ({
           rotateScope.current,
           {
             background:
-              "radial-gradient(circle at center, transparent 30%, rgba(244, 67, 54, 1) 65%)",
+              "radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(244, 67, 54, 1) 55%)",
           },
           { duration: 1.5, ease: "easeInOut" },
         );
@@ -84,7 +84,7 @@ const AnimatedBox = ({
     border: "5rem solid rgba(244, 67, 54, 1)",
     borderRadius: width > 800 ? "35%" : "47%",
     background:
-      "radial-gradient(circle at center, transparent 30%, rgba(244, 67, 54, 1) 65%)",
+      "radial-gradient(circle, rgba(2,0,36,0) 10%, rgba(244, 67, 54, 1) 24%)",
     backgroundSize: "cover",
     backgroundPosition: "center",
     display: "flex",
@@ -121,6 +121,7 @@ const AnimatedBox = ({
     alignItems: "center",
     justifyContent: "center",
     borderRadius: "50%",
+    WebkitBackgroundSize: "65%",
     backgroundImage: `url(/images/portfolio/${imageAfter})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
